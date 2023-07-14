@@ -23,9 +23,9 @@ class AirSimSimulator(Simulator):
         client.simPause(True)
         self.client = client
 
-    def createSimulation(self, scene, *, timestep=1, **kwargs):
+    def createSimulation(self, scene, **kwargs):
 
-        return AirSimSimulation(self, scene, self.client, timestep, **kwargs)
+        return AirSimSimulation(self, scene, self.client, **kwargs)
 
     def destroy(self):
         super().destroy()
@@ -39,15 +39,15 @@ class AirSimSimulation(Simulation):
 
     # ------------------- Required Methods -------------------
 
-    def __init__(self, scene, client, timestep, **kwargs):
+    def __init__(self, scene, client,**kwargs):
         self.client = client
-        self.timestep = timestep
 
         super().__init__(scene, **kwargs)
 
     def setup(self):
         # start airsim simulation
         self.client.enableApiControl(True)
+        # TODO change to work with none or multiple drones
         self.client.armDisarm(True)  # start drone
         self.client.takeoffAsync().join()  # make drone take off
 
@@ -66,13 +66,8 @@ class AirSimSimulation(Simulation):
 
     # ------------------- Other Simulator methods -------------------
 
-    def executeActions(self, allActions):
-        super().executeActions(allActions)
-        # TODO: implement
-        #! need explanation
-
     def destroy(self):
-
+        # TODO multiple drones
         # destroy all sim objects
         for obj_name in self.client.simListSceneObjects():
             self.client.simDestroyObject(obj_name)
@@ -82,18 +77,21 @@ class AirSimSimulation(Simulation):
         super().destroy()
 
     def getProperties(self, obj, properties):
-
+        # TODO work general
         if obj.rolename == "drone":
             # get drone properties
             pose = self.client.simGetVehiclePose()
         else:
 
             # get object properties (not sure if neccessary since objects don't move)
-            pose = self.client.simGetObjectPose()
+            pose = self.client.simGetObjectPose(obj.displayName)
 
+        # todo fix coords
+        # todo use built in obj.parentOrientation.localAnglesFor(globalOrientation)
         pitch, roll, yaw = airsim.to_eularian_angles(pose.orientation)
         position = pose.position
 
+        # TODO fix properties in dict
         values = dict(position=position, eulerXYZ=(pitch, roll, yaw))
         return values
 
@@ -108,26 +106,29 @@ class AirSimSimulation(Simulation):
         pose = self.client.simGetVehiclePose()
         pose.position = pose.position + airsim.Vector3r(0.03, 0, 0)
 
-    def createObject(self, asset_name, *, pos, rot, scale=(1.0, 1.0, 1.0), display_name):
+    
+    def createObject(self, asset_name, *, pos, rot, scale=(1.0, 1.0, 1.0), display_name,obj, physEnabled):
         """Spawns an airsim asset into the simulator
 
         Args:
             asset_name (string): airsim asset name for identifying the asset you want to spawn in
-            pos (tuple): position of the object
-            rot (tuple): eulerXYZ rotation of the object
+            pos (): quaternion
             displayName (string): desired object name
             scale (tuple, optional): _description_. Defaults to (1.0, 1.0, 1.0).
         """
         if not displayName:
-            displayName = f"{asset_name}_spawn_{random.randint(0, 100)}"
+            displayName = str(obj)
 
         # no coordinate recalculating is needed: All AirSim API uses NED coordinate system, i.e., +X is North, +Y is East and +Z is Down
+        # TODO fix coords
+        # TODO fix pose
         pose = airsim.Pose(position_val=tupleToVector3r(
-            pos), orientation_val=airsim.to_eularian_angles(pose.orientation))
+            pos), orientation_val=rot)
 
         obj_name = self.client.simSpawnObject(object_name=displayName, asset_name=asset_name,
-                                              pose=pose, scale=scale, physics_enabled=False, is_blueprint=False)
+                                              pose=pose, scale=scale, physics_enabled=physEnabled, is_blueprint=False)
 
+        # TODO enforce unique name and raise exception if it isn't unique
         print(f"Created object {obj_name} from asset {asset_name} "
               f"at pose {pose}, scale {scale}")
 
