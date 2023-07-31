@@ -3,7 +3,8 @@
 try:
     import carla
 except ImportError as e:
-    raise ModuleNotFoundError('CARLA scenarios require the "carla" Python package') from e
+    raise ModuleNotFoundError(
+        'CARLA scenarios require the "carla" Python package') from e
 
 import math
 import os
@@ -39,19 +40,23 @@ class CarlaSimulator(DrivingSimulator):
         timestep=0.1,
         traffic_manager_port=None,
     ):
+        raise ValueError('A very specific bad thing happened')
         super().__init__()
         verbosePrint(f"Connecting to CARLA on port {port}")
         self.client = carla.Client(address, port)
-        self.client.set_timeout(timeout)  # limits networking operations (seconds)
+        # limits networking operations (seconds)
+        self.client.set_timeout(timeout)
         if carla_map is not None:
             try:
                 self.world = self.client.load_world(carla_map)
             except Exception as e:
-                raise RuntimeError(f"CARLA could not load world '{carla_map}'") from e
+                raise RuntimeError(
+                    f"CARLA could not load world '{carla_map}'") from e
         else:
             if map_path.endswith(".xodr"):
                 with open(map_path) as odr_file:
-                    self.world = self.client.generate_opendrive_world(odr_file.read())
+                    self.world = self.client.generate_opendrive_world(
+                        odr_file.read())
             else:
                 raise RuntimeError("CARLA only supports OpenDrive maps")
         self.timestep = timestep
@@ -118,7 +123,8 @@ class CarlaSimulation(DrivingSimulation):
         weather = self.scene.params.get("weather")
         if weather is not None:
             if isinstance(weather, str):
-                self.world.set_weather(getattr(carla.WeatherParameters, weather))
+                self.world.set_weather(
+                    getattr(carla.WeatherParameters, weather))
             elif isinstance(weather, dict):
                 self.world.set_weather(carla.WeatherParameters(**weather))
 
@@ -138,7 +144,8 @@ class CarlaSimulation(DrivingSimulation):
         if self.record:
             if not os.path.exists(self.record):
                 os.mkdir(self.record)
-            name = "{}/scenario{}.log".format(self.record, self.scenario_number)
+            name = "{}/scenario{}.log".format(self.record,
+                                              self.scenario_number)
             self.client.start_recorder(name)
 
         # Create objects.
@@ -149,12 +156,13 @@ class CarlaSimulation(DrivingSimulation):
             camIndex = 0
             camPosIndex = 0
             egoActor = self.objects[0].carlaActor
-            self.cameraManager = visuals.CameraManager(self.world, egoActor, self.hud)
+            self.cameraManager = visuals.CameraManager(
+                self.world, egoActor, self.hud)
             self.cameraManager._transform_index = camPosIndex
             self.cameraManager.set_sensor(camIndex)
             self.cameraManager.set_transform(self.camTransform)
 
-        self.world.tick()  ## allowing manualgearshift to take effect    # TODO still need this?
+        self.world.tick()  # allowing manualgearshift to take effect    # TODO still need this?
 
         for obj in self.objects:
             if isinstance(obj.carlaActor, carla.Vehicle):
@@ -230,7 +238,8 @@ class CarlaSimulation(DrivingSimulation):
             obj.width = ey * 2 if ey > 0 else obj.width
             obj.length = ex * 2 if ex > 0 else obj.length
             obj.height = ez * 2 if ez > 0 else obj.height
-            carlaActor.apply_control(carla.VehicleControl(manual_gear_shift=True, gear=1))
+            carlaActor.apply_control(carla.VehicleControl(
+                manual_gear_shift=True, gear=1))
         elif isinstance(carlaActor, carla.Walker):
             carlaActor.apply_control(carla.WalkerControl())
             # spawn walker controller
@@ -280,7 +289,8 @@ class CarlaSimulation(DrivingSimulation):
         angularSpeed = utils.carlaToScenicAngularSpeed(currAngVel)
         angularVelocity = utils.carlaToScenicAngularVel(currAngVel)
         globalOrientation = utils.carlaToScenicOrientation(currRot)
-        yaw, pitch, roll = obj.parentOrientation.localAnglesFor(globalOrientation)
+        yaw, pitch, roll = obj.parentOrientation.localAnglesFor(
+            globalOrientation)
         elevation = utils.carlaToScenicElevation(currLoc)
 
         values = dict(

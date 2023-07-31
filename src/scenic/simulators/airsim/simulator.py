@@ -7,6 +7,7 @@ import pathlib
 import time
 import random
 import subprocess
+from scenic.core.vectors import Orientation, Vector
 
 import airsim
 import numpy as np
@@ -17,17 +18,16 @@ from scenic.core.simulators import Simulator, Simulation
 class AirSimSimulator(Simulator):
     def __init__(self, map_path, timestep=0.1):
 
-        # run airsim
-        exepath = r"C:\Users\Mary\Documents\Code\Scenic\AirSimBinaries\Blocks\WindowsNoEditor\Blocks.exe"
-        arguments = '-settings="C:\Users\Mary\Documents\Code\Scenic\ScenicTesting\src\scenic\simulators\airsim\airsimSettings.json"'
-        command = f'start {exepath} {arguments}'
-        subprocess.run(command, shell=True)
-
         # initializing airsim
         client = airsim.VehicleClient()
         client.confirmConnection()
         client.simPause(True)
         self.client = client
+
+        vehicle_name = "Drone2"
+        pose = airsim.Pose(airsim.Vector3r(0, 0, 0),
+                           airsim.to_quaternion(0, 0, 0))
+        client.simAddVehicle(vehicle_name, "simpleflight", pose)
 
     def createSimulation(self, scene, **kwargs):
         return AirSimSimulation(self, scene, self.client, **kwargs)
@@ -54,18 +54,17 @@ class AirSimSimulation(Simulation):
         super().setup()
 
     def createObjectInSimulator(self, obj):
-        # * if we want custom meshes, you need to precompile a binary that includes those meshes: https://www.youtube.com/watch?v=Bp86WiLUC80&ab_channel=AhmedElsaharti
-
-        # TODO ensure object name is unique
+        print(obj.orientation)
+        # ------ set default values ------
         if not obj.displayName:
             obj.displayName = str(obj)
 
-        # no coordinate recalculating is needed: All AirSim API uses NED coordinate system, i.e., +X is North, +Y is East and +Z is Down
+        # ------------
+
         pose = airsim.Pose(position_val=tupleToVector3r(scenicToAirsimSpace(
-            obj.position)), orientation_val=obj.rotation)  # todo transfer to quaternion
+            obj.position)), orientation_val=airsim.to_quaternion(0, 0, 0))  # todo transfer to quaternion
 
         if obj.type == "Drone":
-
             self.client.simAddVehicle(
                 object_name=obj.displayName, vehicle_type="simpleflight", pose=pose)
         else:
@@ -83,26 +82,38 @@ class AirSimSimulation(Simulation):
     # ------------------- Other Simulator methods -------------------
 
     def destroy(self):
-        # * made more general
-        # destroy all sim objects
-        for obj_name in self.client.simListSceneObjects():
-            self.client.simDestroyObject(obj_name)
+        # TODO uncomment below
+        # # * made more general
+        # # destroy all sim objects
+        # for obj_name in self.client.simListSceneObjects():
+        #     self.client.simDestroyObject(obj_name)
 
-        self.client.reset()
+        # self.client.reset()
 
         super().destroy()
 
     def getProperties(self, obj, properties):
-        # get object properties (not sure if neccessary since objects don't move)
-        pose = self.client.simGetObjectPose(obj.displayName)
+        # # get object properties (not sure if neccessary since objects don't move)
+        # pose = self.client.simGetObjectPose(obj.displayName)
 
-        # todo use built in obj.parentOrientation.localAnglesFor(globalOrientation)
-        pitch, roll, yaw = airsim.to_eularian_angles(pose.orientation)
-        position = airsimToScenicSpace(pose.position)
+        # # todo use built in obj.parentOrientation.localAnglesFor(globalOrientation)
+        # pitch, roll, yaw = airsim.to_eularian_angles(pose.orientation)
+        # position = airsimToScenicSpace(pose.position)
 
-        # TODO fix properties in dict
-        values = dict(position=position, eulerXYZ=(pitch, roll, yaw))
-        return values
+        # # TODO fix properties in dict
+        # values = dict(position=position, eulerXYZ=(pitch, roll, yaw))
+        # return values
+        values = dict(
+            position=Vector(0, 0, 0),
+            velocity=0,
+            speed=0,
+            angularSpeed=0,
+            angularVelocity=0,
+            yaw=0,
+            pitch=0,
+            roll=0,
+            elevation=0,
+        )
 
     # ------------------- Utils -------------------
 

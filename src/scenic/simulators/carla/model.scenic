@@ -66,7 +66,7 @@ except ModuleNotFoundError:
         raise RuntimeError('the "carla" package is required to run simulations '
                            'from this scenario')
 
-param carla_map = None
+param carla_map = None #? are you overriding the user inputted global parameters here?
 param address = '127.0.0.1'
 param port = 2000
 param timeout = 10

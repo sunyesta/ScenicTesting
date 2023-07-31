@@ -1,0 +1,3 @@
+{
+	"reader-mode.auto.glob": ["**/node_modules/**"]
+}
