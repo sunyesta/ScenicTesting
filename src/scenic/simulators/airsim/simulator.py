@@ -6,6 +6,7 @@ import os
 import pathlib
 import time
 import random
+import subprocess
 
 import airsim
 import numpy as np
@@ -14,17 +15,21 @@ from scenic.core.simulators import Simulator, Simulation
 
 
 class AirSimSimulator(Simulator):
-    def __init__(self):
+    def __init__(self, map_path, timestep=0.1):
+
+        # run airsim
+        exepath = r"C:\Users\Mary\Documents\Code\Scenic\AirSimBinaries\Blocks\WindowsNoEditor\Blocks.exe"
+        arguments = '-settings="C:\Users\Mary\Documents\Code\Scenic\ScenicTesting\src\scenic\simulators\airsim\airsimSettings.json"'
+        command = f'start {exepath} {arguments}'
+        subprocess.run(command, shell=True)
 
         # initializing airsim
-        client = airsim.MultirotorClient()
+        client = airsim.VehicleClient()
         client.confirmConnection()
-
         client.simPause(True)
         self.client = client
 
     def createSimulation(self, scene, **kwargs):
-
         return AirSimSimulation(self, scene, self.client, **kwargs)
 
     def destroy(self):
@@ -45,19 +50,30 @@ class AirSimSimulation(Simulation):
         super().__init__(scene, **kwargs)
 
     def setup(self):
-        # start airsim simulation
-        self.client.enableApiControl(True)
-        # TODO change to work with none or multiple drones
-        self.client.armDisarm(True)  # start drone
-        self.client.takeoffAsync().join()  # make drone take off
-
         # Create objects.
         super().setup()
 
     def createObjectInSimulator(self, obj):
+        # * if we want custom meshes, you need to precompile a binary that includes those meshes: https://www.youtube.com/watch?v=Bp86WiLUC80&ab_channel=AhmedElsaharti
 
-        self.createObject(obj.asset_name, pos=obj.pos, rot=obj.rot,
-                          scale=obj.scale, display_name=obj.name)
+        # TODO ensure object name is unique
+        if not obj.displayName:
+            obj.displayName = str(obj)
+
+        # no coordinate recalculating is needed: All AirSim API uses NED coordinate system, i.e., +X is North, +Y is East and +Z is Down
+        pose = airsim.Pose(position_val=tupleToVector3r(scenicToAirsimSpace(
+            obj.position)), orientation_val=obj.rotation)  # todo transfer to quaternion
+
+        if obj.type == "Drone":
+
+            self.client.simAddVehicle(
+                object_name=obj.displayName, vehicle_type="simpleflight", pose=pose)
+        else:
+            obj_name = self.client.simSpawnObject(object_name=obj.displayName, asset_name=obj.asset_name,
+                                                  pose=pose, scale=obj.scale, physics_enabled=obj.physEnabled, is_blueprint=False)
+
+        print(f"Created object {obj_name} from asset {obj.asset_name} "
+              f"at pose {pose}, scale {obj.scale}")
 
     def step(self):
         # step 1 frame
@@ -67,7 +83,7 @@ class AirSimSimulation(Simulation):
     # ------------------- Other Simulator methods -------------------
 
     def destroy(self):
-        # TODO multiple drones
+        # * made more general
         # destroy all sim objects
         for obj_name in self.client.simListSceneObjects():
             self.client.simDestroyObject(obj_name)
@@ -77,19 +93,12 @@ class AirSimSimulation(Simulation):
         super().destroy()
 
     def getProperties(self, obj, properties):
-        # TODO work general
-        if obj.rolename == "drone":
-            # get drone properties
-            pose = self.client.simGetVehiclePose()
-        else:
+        # get object properties (not sure if neccessary since objects don't move)
+        pose = self.client.simGetObjectPose(obj.displayName)
 
-            # get object properties (not sure if neccessary since objects don't move)
-            pose = self.client.simGetObjectPose(obj.displayName)
-
-        # todo fix coords
         # todo use built in obj.parentOrientation.localAnglesFor(globalOrientation)
         pitch, roll, yaw = airsim.to_eularian_angles(pose.orientation)
-        position = pose.position
+        position = airsimToScenicSpace(pose.position)
 
         # TODO fix properties in dict
         values = dict(position=position, eulerXYZ=(pitch, roll, yaw))
@@ -106,33 +115,16 @@ class AirSimSimulation(Simulation):
         pose = self.client.simGetVehiclePose()
         pose.position = pose.position + airsim.Vector3r(0.03, 0, 0)
 
-    def createObject(self, asset_name, *, pos, rot, scale=(1.0, 1.0, 1.0), display_name, obj, physEnabled):
-        """Spawns an airsim asset into the simulator
-
-        Args:
-            asset_name (string): airsim asset name for identifying the asset you want to spawn in
-            pos (): quaternion
-            displayName (string): desired object name
-            scale (tuple, optional): _description_. Defaults to (1.0, 1.0, 1.0).
-        """
-        if not displayName:
-            displayName = str(obj)
-
-        # no coordinate recalculating is needed: All AirSim API uses NED coordinate system, i.e., +X is North, +Y is East and +Z is Down
-        # TODO fix coords
-        # TODO fix pose
-        pose = airsim.Pose(position_val=tupleToVector3r(
-            pos), orientation_val=rot)
-
-        obj_name = self.client.simSpawnObject(object_name=displayName, asset_name=asset_name,
-                                              pose=pose, scale=scale, physics_enabled=physEnabled, is_blueprint=False)
-
-        # TODO enforce unique name and raise exception if it isn't unique
-        print(f"Created object {obj_name} from asset {asset_name} "
-              f"at pose {pose}, scale {scale}")
-
 
 # -------------- Static helper functions --------------
 
 def tupleToVector3r(tuple):
     return airsim.Vector3r(tuple[0], tuple[1], tuple[2])
+
+
+def scenicToAirsimSpace(tuple):
+    return (tuple[0], tuple[2], tuple[1])
+
+
+def airsimToScenicSpace(tuple):
+    return (tuple[0], tuple[2], tuple[1])
