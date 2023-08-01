@@ -23,6 +23,7 @@ class SetAngularVelocityAction(Action):
         xAngularVel = self.angularVel * _math.cos(obj.heading)
         yAngularVel = self.angularVel * _math.sin(obj.heading)
         newAngularVel = _utils.scalarToCarlaVector3D(xAngularVel, yAngularVel)
+        # get carla obj and then call a function from it
         obj.carlaActor.set_angular_velocity(newAngularVel)
 
 
@@ -160,7 +161,8 @@ class SetWalkAction(PedestrianAction):
         controller = obj.carlaController
         if self.enabled:
             controller.start()
-            controller.go_to_location(sim.world.get_random_location_from_navigation())
+            controller.go_to_location(
+                sim.world.get_random_location_from_navigation())
             controller.set_max_speed(self.maxSpeed)
         else:
             controller.stop()
