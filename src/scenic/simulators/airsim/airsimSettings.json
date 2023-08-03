@@ -1,5 +1,5 @@
 {
-	"SimMode": "ComputerVision",
+	"SimMode": "Multirotor",
 	"ClockSpeed": 1,
 
 	"Vehicles": {}

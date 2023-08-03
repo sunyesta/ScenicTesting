@@ -444,7 +444,10 @@ class Simulation(abc.ABC):
             if terminationReason is not None:
                 return TerminationType.simulationTerminationCondition, terminationReason
             if maxSteps and self.currentTime >= maxSteps:
-                return TerminationType.timeLimit, f"reached time limit ({maxSteps} steps)"
+                return (
+                    TerminationType.timeLimit,
+                    f"reached time limit ({maxSteps} steps)",
+                )
 
             # Compute the actions of the agents in this time step
             allActions = OrderedDict()
@@ -500,7 +503,9 @@ class Simulation(abc.ABC):
         for obj in self.scene.objects:
             self._createObject(obj)
 
-    def initializeReplay(self, replay, enableReplay, enableDivergenceCheck, allowPickle):
+    def initializeReplay(
+        self, replay, enableReplay, enableDivergenceCheck, allowPickle
+    ):
         if replay:
             self.replaying = True
             self._replayIn = Serializer(replay, allowPickle=allowPickle, detectEnd=True)
@@ -562,7 +567,9 @@ class Simulation(abc.ABC):
 
         # Record initially-recorded values
         if self.currentTime == 0:
-            values = dynamicScenario._evaluateRecordedExprs(RequirementType.recordInitial)
+            values = dynamicScenario._evaluateRecordedExprs(
+                RequirementType.recordInitial
+            )
             for name, val in values.items():
                 records[name] = val
 
@@ -950,7 +957,9 @@ class SimulationResult:
             values its expression took during the simulation.
     """
 
-    def __init__(self, trajectory, actions, terminationType, terminationReason, records):
+    def __init__(
+        self, trajectory, actions, terminationType, terminationReason, records
+    ):
         self.trajectory = tuple(trajectory)
         assert self.trajectory
         self.finalState = self.trajectory[-1]

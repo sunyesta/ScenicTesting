@@ -18,5 +18,10 @@ simulator AirSimSimulator(None, timestep=globalParameters.timestep)
 class AirSimActor:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
     
+    name: None
+    assetName: None
+    blueprint: None
+
+class Drone(AirSimActor):
+    blueprint: "Drone"
