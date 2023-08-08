@@ -1,5 +1,6 @@
 
 from scenic.simulators.airsim.simulator import AirSimSimulator    # for use in scenarios
+from scenic.simulators.airsim.actions import *
 
 # ---------- global parameters ----------
 # Parameters of a scene like weather or time of day which are not associated with any object. 
@@ -22,6 +23,13 @@ class AirSimActor:
     name: None
     assetName: None
     blueprint: None
+    realObjName: None 
+    client: None
+    
 
 class Drone(AirSimActor):
     blueprint: "Drone"
+
+class Object(AirSimActor):
+    blueprint: "Object"
+    physEnabled: False
