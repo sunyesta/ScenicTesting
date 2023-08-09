@@ -13,19 +13,23 @@ class MoveToPositionAction(Action):
     def __init__(self, x, y, z):
         airsimPosition = scenicToAirsimLocation(Vector(x, y, z))
         self.x = airsimPosition.x_val
-        self.y = airsimPosition.x_val
-        self.z = airsimPosition.x_val
+        self.y = airsimPosition.y_val
+        self.z = airsimPosition.z_val
 
     def applyTo(self, agent, simulation):
+        print("moving to position: drone = "+agent.realObjName)
+        simulation.client.simPause(False)
+        simulation.client.hoverAsync().join()
+        
         simulation.client.moveToPositionAsync(
-            self.x,
-            self.y,
-            self.z,
+            3,3,0,
             5,
             vehicle_name=agent.realObjName,
-        )
+        ).join()
+        simulation.client.simPause(True)
 
 
+# TODO fix
 # class MoveByVelocity(Action):
 #     def __init__(self, vx, vy, vz, duration):
 #         airsimVelocity = scenicToAirsimLocation(Vector(vx, vy, vz))

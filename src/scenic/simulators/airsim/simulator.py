@@ -32,24 +32,16 @@ class AirSimSimulator(Simulator):
         # print(airsim.Vector3r(100, 100, 100))
 
         # initializing airsim
-        client = airsim.MultirotorClient()
-        client.confirmConnection()
-        client.simPause(True)
+
         try:
+            client = airsim.MultirotorClient()
+            client.confirmConnection()
+            client.simPause(True)
             pass
-        except:
-            raise SimulatorInterfaceWarning(
-                "Airsim must be running on before executing scenic"
-            )
+        except Exception:
+            raise RuntimeError("Airsim must be running on before executing scenic")
 
         self.client = client
-
-        # # # delete all objects in simulation
-        # for objName in client.simListSceneObjects():
-        # print("flight name",objName)
-        # client.simDestroyObject("SimpleFlight")
-        # if "Ground" in objName:
-        #     client.simDestroyObject(objName)
 
         super().__init__()
 
@@ -69,40 +61,30 @@ class AirSimSimulation(Simulation):
     def __init__(self, simulator, scene, client, **kwargs):
         self.simulator = simulator
         self.client = client
-
+        self.joinables = []
         self.objs = {}
 
         super().__init__(scene, **kwargs)
 
     def setup(self):
-        self.client.simPause(False)
-        print(self.client.simListAssets())
+        
         self.startDrones = self.client.listVehicles()
-        print("vehicles: " + str(self.client.listVehicles()))
 
+        
+        print("start vehicles: " + str(self.client.listVehicles()))
         hiddenPose = airsim.Pose(position_val=airsim.Vector3r(100, 100, 100))
+        
+        # position all the start drones to not be in view
         for drone in self.startDrones:
             self.client.enableApiControl(True, drone)
-            self.client.armDisarm(True, drone)
-
-            self.client.simSetVehiclePose(
-                vehicle_name=drone,
-                pose=hiddenPose,
-                ignore_collision=True,  # TODO make false
-            )
-            self.client.moveToPositionAsync(
-                hiddenPose.position.x_val,
-                hiddenPose.position.y_val,
-                hiddenPose.position.z_val,
-                5,
-                vehicle_name=drone,
-            )
-
-        self.client.simPause(True)
+            self.initializeDronePosition(drone,hiddenPose)
+        
+        self.waitForJoinables()
         self.nextAvalibleDroneIndex = 0
 
         # Create objects.
         super().setup()
+        self.waitForJoinables()
 
     def createObjectInSimulator(self, obj):
         # ------ set default values ------
@@ -111,8 +93,8 @@ class AirSimSimulation(Simulation):
 
         # ensure obj isn't already in world
         if obj.name in self.objs:
-            raise SimulationCreationError(
-                "there is already an object of the name " + obj.name + "in the simulator"
+            raise RuntimeError(
+                "there is already an object of the name " + obj.name + " in the simulator"
             )
 
         realObjName = obj.name + str(hash(obj))
@@ -141,25 +123,9 @@ class AirSimSimulation(Simulation):
                     vehicle_name=realObjName, vehicle_type="simpleflight", pose=pose
                 )
                 self.client.enableApiControl(True, realObjName)
-                self.client.armDisarm(True, realObjName)
-
-            # set its pose
-            self.client.simPause(False)
-            self.client.takeoffAsync(vehicle_name=realObjName).join()
-            self.client.simSetVehiclePose(
-                vehicle_name=realObjName, pose=pose, ignore_collision=True
-            )
-
-            self.client.moveToPositionAsync(
-                pose.position.x_val,
-                pose.position.y_val,
-                pose.position.z_val,
-                10,
-                vehicle_name=realObjName,
-            ).join()
-            self.client.simPause(True)
-            # save our newly created drone
-            self.vehicles = self.client.listVehicles()
+            
+            self.initializeDronePosition(realObjName,pose)
+           
         else:
             if not (obj.assetName in self.client.simListAssets()):
                 # ? simulation keeps restarting when simulation creation error is thrown
@@ -176,20 +142,61 @@ class AirSimSimulation(Simulation):
             )
 
         # print(f"Created object {realObjName} from asset {obj.assetName} ")
+    def initializeDronePosition(self,droneName,pose):
+        self.client.simPause(False)
+        self.client.armDisarm(True, droneName)
+        
+        self.client.takeoffAsync(
+            vehicle_name=droneName,
+        ).join()
+        
+        
+         # set its pose
+        self.client.simSetVehiclePose(
+            vehicle_name=droneName, pose=pose, ignore_collision=True
+        )
+        time.sleep(4)
 
+        print("new pose = "+str(self.client.simGetVehiclePose().position))
+        # print("new pose = "+str(pose.position))
+
+        # joinable = self.client.moveToPositionAsync(
+        #     pose.position.x_val,
+        #     pose.position.y_val,
+        #     pose.position.z_val,
+        #     10,
+        #     vehicle_name=droneName,
+        # )
+        
+        joinable = self.client.takeoffAsync(
+            vehicle_name=droneName,
+        )
+        self.joinables.append(joinable)
+        self.client.simPause(True)
+        
+        # save our newly created drone
+        self.vehicles = self.client.listVehicles()
+    
     def step(self):
         # step 1 frame
         print(self.objs)
         self.client.simContinueForTime(self.timestep)
         pass
-
+    
+    def waitForJoinables(self):
+        self.client.simPause(False)
+        for joinable in self.joinables:
+            joinable.join()
+        self.client.simPause(True)
+        print("joined "+str(len(self.joinables)))
+        self.joinables = []
     # ------------------- Other Simulator methods -------------------
 
     def destroy(self):
         print("\n\n\ndestroying!!!")
         print(self.objs.values())
         # ? nothing wants to run after a client method is called?
-        self.client.simPause(False)
+        # self.client.simPause(False)
         for obj_name in self.objs.values():
             print(obj_name)
             if not (obj_name in self.vehicles):

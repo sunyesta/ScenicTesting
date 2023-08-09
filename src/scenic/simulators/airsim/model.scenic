@@ -24,7 +24,6 @@ class AirSimActor:
     assetName: None
     blueprint: None
     realObjName: None 
-    client: None
     
 
 class Drone(AirSimActor):
