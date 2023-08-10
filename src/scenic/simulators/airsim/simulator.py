@@ -9,7 +9,7 @@ import subprocess
 import scipy
 from scenic.core.vectors import Orientation, Vector
 import time
-
+from scenic.core.type_support import toVector
 
 import numpy as np
 
@@ -67,22 +67,43 @@ class AirSimSimulation(Simulation):
         super().__init__(scene, **kwargs)
 
     def setup(self):
-        
+        self.client.simPause(True)
+
+        self.joinables = []
         self.startDrones = self.client.listVehicles()
 
-        
-        print("start vehicles: " + str(self.client.listVehicles()))
-        hiddenPose = airsim.Pose(position_val=airsim.Vector3r(100, 100, 100))
-        
-        # position all the start drones to not be in view
+        neededDrones = list(
+            filter(lambda obj: obj.blueprint == "Drone", self.scene.objects)
+        )
+
+        hiddenPose = airsim.Pose(position_val=airsim.Vector3r(0, 0, 0))
+
+        # add neccessary drones
+
+        for i in range(len(self.startDrones), len(neededDrones)):
+            print("added drone")
+            drone = str(random.randint(1, 1000))
+            self.client.simAddVehicle(
+                vehicle_name=drone,
+                vehicle_type="simpleflight",
+                pose=hiddenPose,
+            )
+        self.startDrones = self.client.listVehicles()
+        print("startDrones = " + str(self.startDrones))
+        # TODO make a ground and place drone on ground
         for drone in self.startDrones:
+            newPose = airsim.Pose(position_val=airsim.Vector3r(10, 10, 10))
+            self.client.simSetVehiclePose(newPose, True, drone)
+
             self.client.enableApiControl(True, drone)
-            self.initializeDronePosition(drone,hiddenPose)
-        
+            self.client.armDisarm(True, drone)
+            self.client.landAsync(vehicle_name=drone)
+            self.joinables.append(self.client.takeoffAsync(vehicle_name=drone))
         self.waitForJoinables()
+
         self.nextAvalibleDroneIndex = 0
 
-        # Create objects.
+        # create objs
         super().setup()
         self.waitForJoinables()
 
@@ -94,7 +115,9 @@ class AirSimSimulation(Simulation):
         # ensure obj isn't already in world
         if obj.name in self.objs:
             raise RuntimeError(
-                "there is already an object of the name " + obj.name + " in the simulator"
+                "there is already an object of the name "
+                + obj.name
+                + " in the simulator"
             )
 
         realObjName = obj.name + str(hash(obj))
@@ -114,8 +137,21 @@ class AirSimSimulation(Simulation):
                 self.nextAvalibleDroneIndex += 1
 
                 self.objs[obj.name] = realObjName
-
+                obj.realObjName = realObjName
+                self.client.simSetVehiclePose(
+                    vehicle_name=realObjName, pose=pose, ignore_collision=True
+                )
+                self.joinables.append(
+                    self.client.moveToPositionAsync(
+                        pose.position.x_val,
+                        pose.position.y_val,
+                        pose.position.z_val,
+                        velocity=5,
+                        vehicle_name=realObjName,
+                    )
+                )
             else:
+                assert False
                 # if no avalible drone, create a new one
                 print("created type2: " + realObjName)
                 self.objs[obj.name] = realObjName
@@ -123,15 +159,15 @@ class AirSimSimulation(Simulation):
                     vehicle_name=realObjName, vehicle_type="simpleflight", pose=pose
                 )
                 self.client.enableApiControl(True, realObjName)
-            
-            self.initializeDronePosition(realObjName,pose)
-           
+
         else:
             if not (obj.assetName in self.client.simListAssets()):
                 # ? simulation keeps restarting when simulation creation error is thrown
-                raise SimulationCreationError("no asset of name found: " + obj.assetName)
+                raise SimulationCreationError(
+                    "no asset of name found: " + obj.assetName
+                )
 
-            print("creating:" + obj.name + " " + realObjName)
+            # print("creating:" + obj.name + " " + realObjName)
             self.objs[obj.name] = self.client.simSpawnObject(
                 object_name=realObjName,
                 asset_name=obj.assetName,
@@ -142,22 +178,13 @@ class AirSimSimulation(Simulation):
             )
 
         # print(f"Created object {realObjName} from asset {obj.assetName} ")
-    def initializeDronePosition(self,droneName,pose):
+
+    def initializeDronePosition(self, droneName, pose):
         self.client.simPause(False)
-        self.client.armDisarm(True, droneName)
-        
-        self.client.takeoffAsync(
-            vehicle_name=droneName,
-        ).join()
-        
-        
-         # set its pose
-        self.client.simSetVehiclePose(
-            vehicle_name=droneName, pose=pose, ignore_collision=True
-        )
+
         time.sleep(4)
 
-        print("new pose = "+str(self.client.simGetVehiclePose().position))
+        print("new pose = " + str(self.client.simGetVehiclePose().position))
         # print("new pose = "+str(pose.position))
 
         # joinable = self.client.moveToPositionAsync(
@@ -167,29 +194,29 @@ class AirSimSimulation(Simulation):
         #     10,
         #     vehicle_name=droneName,
         # )
-        
+
         joinable = self.client.takeoffAsync(
             vehicle_name=droneName,
         )
         self.joinables.append(joinable)
         self.client.simPause(True)
-        
+
         # save our newly created drone
         self.vehicles = self.client.listVehicles()
-    
+
     def step(self):
         # step 1 frame
-        print(self.objs)
         self.client.simContinueForTime(self.timestep)
         pass
-    
+
     def waitForJoinables(self):
         self.client.simPause(False)
         for joinable in self.joinables:
             joinable.join()
         self.client.simPause(True)
-        print("joined "+str(len(self.joinables)))
+        print("joined " + str(len(self.joinables)))
         self.joinables = []
+
     # ------------------- Other Simulator methods -------------------
 
     def destroy(self):
@@ -197,11 +224,11 @@ class AirSimSimulation(Simulation):
         print(self.objs.values())
         # ? nothing wants to run after a client method is called?
         # self.client.simPause(False)
-        for obj_name in self.objs.values():
-            print(obj_name)
-            if not (obj_name in self.vehicles):
-                print("destroying:" + obj_name)
-                self.client.simDestroyObject(obj_name)
+        # for obj_name in self.objs.values():
+        #     print(obj_name)
+        #     if not (obj_name in self.vehicles):
+        #         print("destroying:" + obj_name)
+        #         self.client.simDestroyObject(obj_name)
 
         # for drone in self.client.listVehicles():
         self.client.reset()
@@ -293,6 +320,7 @@ def airsimToScenicRotation(orientation):
 
 
 def scenicToAirsimLocation(position):
+    position = toVector(position)
     return airsim.Vector3r(position.x, position.y, -position.z)
 
 
