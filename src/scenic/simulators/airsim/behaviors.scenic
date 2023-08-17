@@ -21,6 +21,24 @@ class MoveToPositionAction(Action):
         print("finished calling")
 
 
+class MoveByVelocityAction(Action):
+    def __init__(self, position, duration):
+        airsimVelocity = scenicToAirsimLocation(position)
+        self.x = airsimVelocity.x_val
+        self.y = airsimVelocity.y_val
+        self.z = airsimVelocity.z_val
+        self.duration = duration
+
+    def applyTo(self, agent, simulation):
+        print("calling " + agent.realObjName)
+        simulation.client.moveByVelocityAsync(
+            self.x,
+            self.y,
+            self.z,
+            self.duration,
+            vehicle_name=agent.realObjName,
+        )
+
 
 behavior FlyToPosition(position, tolerance = 1):
 
@@ -41,5 +59,17 @@ behavior Patrol(positions, loop=True):
         if not loop:
             return
 
-   
-      
+
+
+
+behavior MoveByVelocity(position,seconds):
+    endTime = simulation().currentRealTime + seconds 
+    take MoveByVelocityAction(position,seconds)
+    
+
+    while simulation().currentRealTime < endTime:
+        wait
+    
+    
+
+

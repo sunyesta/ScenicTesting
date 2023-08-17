@@ -22,16 +22,23 @@ class AirSimActor:
         super().__init__(*args, **kwargs)
     
     name: None
+
     assetName: None
     blueprint: None
     realObjName: None 
+
+    # override
+    # TODO check this
+    shape: MeshShape("/home/mary/Documents/AirSim/ScenicTesting/src/scenic/simulators/airsim/objs/cubes/"+self.assetName+".obj")
    
     
 
 class Drone(AirSimActor):
     blueprint: "Drone"
     startHovering: True #TODO
+    assetName: "Quadrotor1"
 
 class StaticObj(AirSimActor):
     blueprint: "Object"
     physEnabled: False
+    

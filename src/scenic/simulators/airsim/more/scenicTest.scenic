@@ -10,10 +10,9 @@ model scenic.simulators.airsim.model
     
 # new Drone at (3,3,3), with behavior FlyToPosition((10,10,10))
 new Drone at (0,0,0), with behavior Patrol([(10,10,10),(10,0,10),(0,10,10),(0,0,10)])
-# new Drone at (0,0,5)
-# new Drone at (0,0,10)
+new Drone at (0,0,10), with behavior MoveByVelocity((0,5,0),1)
     
-# new Drone at (10,10,10), facing (30 deg,10 deg, 0),
+new Drone at (10,10,10), facing (0 deg,0 deg, 90 deg),
 #      with behavior FlyToPosition(1,1,1)
 # new Drone at (-4,-4,5)
 

@@ -1,40 +1,30 @@
 import airsim
+import random
+import time
+
+
+def scenicToAirsimRotation(orientation):
+    pitch, yaw, roll = orientation.r.as_euler("XZY", degrees=True)
+    return airsim.to_quaternion(pitch, roll, yaw)
+
 
 client = airsim.MultirotorClient()
 client.confirmConnection()
-client.simPause(False)
 
+upAngle = 3.14159 / 2
 
 drone = client.listVehicles()[0]
 client.enableApiControl(True, drone)
+client.armDisarm(True, drone)
 print(drone)
 
-client.armDisarm(True, drone)
-client.takeoffAsync(vehicle_name=drone).join()
-print("took off")
-
-pose = airsim.Pose(airsim.Vector3r(0, 0, -10), airsim.to_quaternion(0, 0, 0))
-
-print(client.simGetVehiclePose(drone))
+newPose = airsim.Pose(
+    position_val=airsim.Vector3r(0, 0, -1),
+    orientation_val=airsim.to_quaternion(0, 0, upAngle),
+)
 
 
-# client.moveToPositionAsync(
-#     pose.position.x_val,
-#     pose.position.y_val,
-#     pose.position.z_val,
-#     velocity=5,
-#     vehicle_name=drone,
-# )
-
-# self.client.armDisarm(True, drone)
-client.simSetVehiclePose(vehicle_name=drone, pose=pose, ignore_collision=True)
-
-
-client.moveToPositionAsync(
-    10,
-    10,
-    -10,
-    5,
-    vehicle_name=drone,
-).join()
-print("finished")
+client.simPause(False)
+client.simSetVehiclePose(newPose, True, drone)
+time.sleep(0.1)
+# client.simPause(True)

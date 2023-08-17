@@ -71,7 +71,7 @@ class AirSimSimulation(Simulation):
 
         self.joinables = []
         self.startDrones = self.client.listVehicles()
-
+        self.objTrove = []
         neededDrones = list(
             filter(lambda obj: obj.blueprint == "Drone", self.scene.objects)
         )
@@ -82,6 +82,7 @@ class AirSimSimulation(Simulation):
 
         for i in range(len(self.startDrones), len(neededDrones)):
             print("added drone")
+            # TODO make drone names non conflicting
             drone = str(random.randint(1, 1000))
             self.client.simAddVehicle(
                 vehicle_name=drone,
@@ -90,9 +91,15 @@ class AirSimSimulation(Simulation):
             )
         self.startDrones = self.client.listVehicles()
         print("startDrones = " + str(self.startDrones))
-        # TODO make a ground and place drone on ground
+
+        # TODO find ground and place drone on ground
+        # TODO make artificial ground
         for drone in self.startDrones:
-            newPose = airsim.Pose(position_val=airsim.Vector3r(10, 10, 10))
+            newPose = airsim.Pose(
+                position_val=airsim.Vector3r(
+                    random.randint(1, 100), random.randint(1, 100), 10
+                )
+            )
             self.client.simSetVehiclePose(newPose, True, drone)
 
             self.client.enableApiControl(True, drone)
@@ -168,7 +175,8 @@ class AirSimSimulation(Simulation):
                 )
 
             # print("creating:" + obj.name + " " + realObjName)
-            self.objs[obj.name] = self.client.simSpawnObject(
+
+            realObjName = self.client.simSpawnObject(
                 object_name=realObjName,
                 asset_name=obj.assetName,
                 pose=pose,
@@ -177,6 +185,8 @@ class AirSimSimulation(Simulation):
                 is_blueprint=False,
             )
 
+            self.objs[obj.name] = realObjName
+            self.objTrove.append(realObjName)
         # print(f"Created object {realObjName} from asset {obj.assetName} ")
 
     def initializeDronePosition(self, droneName, pose):
@@ -221,18 +231,20 @@ class AirSimSimulation(Simulation):
 
     def destroy(self):
         print("\n\n\ndestroying!!!")
-        print(self.objs.values())
+        # client = airsim.MultirotorClient()  # ? without this the program doesn't work
+        client = self.client
+        client.confirmConnection()
+        client.simPause(True)
+
+        print(self.objTrove)
         # ? nothing wants to run after a client method is called?
-        # self.client.simPause(False)
-        # for obj_name in self.objs.values():
-        #     print(obj_name)
-        #     if not (obj_name in self.vehicles):
-        #         print("destroying:" + obj_name)
-        #         self.client.simDestroyObject(obj_name)
+        # client.simPause(False)
+        for obj_name in self.objTrove:
+            print("destroying:" + obj_name)
+            client.simDestroyObject(obj_name)
 
-        # for drone in self.client.listVehicles():
-        self.client.reset()
-
+        # for drone in client.listVehicles():
+        client.reset()
         super().destroy()
 
     def getProperties(self, obj, properties):
@@ -304,7 +316,7 @@ def tupleToVector3r(tuple):
 
 
 def scenicToAirsimRotation(orientation):
-    pitch, yaw, roll = orientation.r.as_euler("XZY", degrees=True)
+    pitch, yaw, roll = orientation.r.as_euler("XZY", degrees=False)
     return airsim.to_quaternion(pitch, roll, yaw)
 
 
@@ -314,7 +326,7 @@ def airsimToScenicRotation(orientation):
     angles = (pitch, yaw, roll)
 
     r = scipy.spatial.transform.Rotation.from_euler(
-        seq="XZY", angles=angles, degrees=False  # TODO check if degrees
+        seq="XZY", angles=angles, degrees=False
     )
     return Orientation(r)
 
@@ -330,4 +342,7 @@ def airsimToScenicLocation(position):
 
 def scenicToAirsimScale(obj):
     # TODO fix scale ratio
+    # movment function in meters
+    # drone size in blender is 98.1694 m
+    # coords scaled by 100? https://microsoft.github.io/AirSim/apis/#:~:text=All%20AirSim%20API%20uses%20NED,in%20centimeters%20instead%20of%20meters.
     return airsim.Vector3r(obj.width, obj.length, obj.height)
