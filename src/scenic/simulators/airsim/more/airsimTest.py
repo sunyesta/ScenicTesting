@@ -1,11 +1,30 @@
 import airsim
+import random
+import time
 
-client = airsim.VehicleClient()
+
+def scenicToAirsimRotation(orientation):
+    pitch, yaw, roll = orientation.r.as_euler("XZY", degrees=True)
+    return airsim.to_quaternion(pitch, roll, yaw)
+
+
+client = airsim.MultirotorClient()
 client.confirmConnection()
-client.simPause(True)
+
+upAngle = 3.14159 / 2
+
+drone = client.listVehicles()[0]
+client.enableApiControl(True, drone)
+client.armDisarm(True, drone)
+print(drone)
+
+newPose = airsim.Pose(
+    position_val=airsim.Vector3r(0, 0, -1),
+    orientation_val=airsim.to_quaternion(0, 0, upAngle),
+)
 
 
-vehicle_name = "Drone2"
-pose = airsim.Pose(airsim.Vector3r(0, 0, -5),
-                   airsim.to_quaternion(0, 0, 0))
-client.simAddVehicle(vehicle_name, "simpleflight", pose)
+client.simPause(False)
+client.simSetVehiclePose(newPose, True, drone)
+time.sleep(0.1)
+# client.simPause(True)

@@ -364,7 +364,8 @@ class Scenario(_ScenarioPickleMixin):
                         continue
                     if oi.intersects(oj):
                         raise InvalidScenarioError(
-                            f"{oi} at {oi.position} intersects" f" {oj} at {oj.position}"
+                            f"{oi} at {oi.position} intersects"
+                            f" {oj} at {oj.position}"
                         )
 
     def generate(self, maxIterations=2000, verbosity=0, feedback=None):
@@ -414,7 +415,9 @@ class Scenario(_ScenarioPickleMixin):
         for _ in range(numScenes):
             try:
                 remainingIts = maxIterations - totalIterations
-                scene, iterations = self._generateInner(remainingIts, verbosity, feedback)
+                scene, iterations = self._generateInner(
+                    remainingIts, verbosity, feedback
+                )
                 scenes.append(scene)
                 totalIterations += iterations
             except RejectionException:
@@ -510,14 +513,18 @@ class Scenario(_ScenarioPickleMixin):
         # Observing entity non visibility
         for obj in filter(lambda x: x._nonObservingEntity is not None, self._instances):
             requirements.append(
-                NonVisibilityRequirement(obj._nonObservingEntity, obj, possible_occluders)
+                NonVisibilityRequirement(
+                    obj._nonObservingEntity, obj, possible_occluders
+                )
             )
 
         # Visibility from the ego
         for obj in filter(
             lambda x: x.requireVisible and x is not self.egoObject, self.objects
         ):
-            requirements.append(VisibilityRequirement(self.egoObject, obj, self.objects))
+            requirements.append(
+                VisibilityRequirement(self.egoObject, obj, self.objects)
+            )
 
         return tuple(requirements)
 
@@ -531,7 +538,9 @@ class Scenario(_ScenarioPickleMixin):
             sampledParams[param] = sampledValue
         sampledNamespaces = {}
         for modName, namespace in self.behaviorNamespaces.items():
-            sampledNamespace = {name: sample[value] for name, value in namespace.items()}
+            sampledNamespace = {
+                name: sample[value] for name, value in namespace.items()
+            }
             sampledNamespaces[modName] = (namespace, sampledNamespace, namespace.copy())
         temporalReqs = (
             BoundRequirement(req, sample, req.proposition) for req in self.requirements

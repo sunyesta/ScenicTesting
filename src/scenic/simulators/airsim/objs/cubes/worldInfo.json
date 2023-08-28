@@ -1,0 +1,2784 @@
+{
+    "cone_5": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder2": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder3": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder4": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder5": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder6": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder7": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder8": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder_2": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "ground": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "ground_2": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "ground_3": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "ground_4": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "ground_5": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "ground_6": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "orangeball": {
+        "assetName": "Sphere",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_1": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_10": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_100": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_101": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_102": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_103": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_104": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_105": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_106": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_108": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_109": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_110": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_111": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_112": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_113": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_114": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_115": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_116": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_117": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_119": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_120": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_121": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_122": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_123": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_124": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_125": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_126": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_128": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_129": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_13": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_130": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_131": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_132": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_133": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_134": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_135": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_136": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_137": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_138": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_139": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_140": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_141": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_142": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_143": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_144": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_145": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_146": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_147": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_148": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_149": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_150": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_151": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_152": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_153": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_154": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_155": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_156": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_157": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_158": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_159": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_160": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_173": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_174": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_175": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_176": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_185": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_186": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_187": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_196": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_197": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_198": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_199": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_200": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_209": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_210": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_211": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_212": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_217": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_218": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_231": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_232": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_233": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_234": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_243": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_244": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_245": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_246": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_247": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_256": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_257": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_26": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_266": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_267": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_268": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_269": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_282": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_283": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_284": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_31": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_4": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_45": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_47": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_48": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_49": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_50": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_51": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_52": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_53": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_54": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_55": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_56": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_57": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_6": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_60": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_61": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_62": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_63": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_64": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_65": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_66": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_67": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_68": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_69": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_7": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_70": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_71": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_72": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_73": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_74": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_75": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_76": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_77": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_78": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_79": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_8": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_80": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_81": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_82": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_83": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_84": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_85": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_86": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_87": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_88": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_89": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_9": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_90": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_91": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_92": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_93": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_94": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_96": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_97": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_98": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatecube_rounded_99": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "externalcamera": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "simpleflight": {
+        "assetName": "Propeller",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "bp_pipcamera_c_2147482509": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "bp_pipcamera_c_2147482498": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "bp_pipcamera_c_2147482487": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "bp_pipcamera_c_2147482476": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "bp_pipcamera_c_2147482465": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sphere1": {
+        "assetName": "Sphere",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cone6": {
+        "assetName": "Cone",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cylinder9": {
+        "assetName": "Cylinder",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_skysphere": {
+        "assetName": "SM_SkySphere",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "templatefloor": {
+        "assetName": "TemplateFloor",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "1m_cube_chamfer": {
+        "assetName": "1M_Cube_Chamfer",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "s_1_unit_plane": {
+        "assetName": "S_1_Unit_Plane",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "cube285": {
+        "assetName": "Cube",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "plane1": {
+        "assetName": "Plane",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_cranerig_arm": {
+        "assetName": "SM_CraneRig_Arm",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_cranerig_base": {
+        "assetName": "SM_CraneRig_Base",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_cranerig_body": {
+        "assetName": "SM_CraneRig_Body",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_cranerig_mount": {
+        "assetName": "SM_CraneRig_Mount",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_railrig_mount": {
+        "assetName": "SM_RailRig_Mount",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_railrig_track": {
+        "assetName": "SM_RailRig_Track",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "boundingboxcorner": {
+        "assetName": "BoundingBoxCorner",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "boundingboxedge": {
+        "assetName": "BoundingBoxEdge",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "planetranslationhandle": {
+        "assetName": "PlaneTranslationHandle",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_sequencer_key": {
+        "assetName": "SM_Sequencer_Key",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "sm_sequencer_node": {
+        "assetName": "SM_Sequencer_Node",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "googledaydreamcontroller": {
+        "assetName": "GoogleDaydreamController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "htcvivecontroller": {
+        "assetName": "HTCViveController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "left_microsoftmixedrealitycontroller": {
+        "assetName": "left_MicrosoftMixedRealityController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "right_microsoftmixedrealitycontroller": {
+        "assetName": "right_MicrosoftMixedRealityController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "oculusgocontroller": {
+        "assetName": "OculusGoController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "left_oculustouchcontroller": {
+        "assetName": "left_OculusTouchController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "right_oculustouchcontroller": {
+        "assetName": "right_OculusTouchController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "left_oculustouch_v2controller": {
+        "assetName": "left_OculusTouch_v2Controller",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "right_oculustouch_v2controller": {
+        "assetName": "right_OculusTouch_v2Controller",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "left_oculustouch_v3controller": {
+        "assetName": "left_OculusTouch_v3Controller",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "right_oculustouch_v3controller": {
+        "assetName": "right_OculusTouch_v3Controller",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "left_valveindexcontroller": {
+        "assetName": "left_ValveIndexController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "right_valveindexcontroller": {
+        "assetName": "right_ValveIndexController",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "propeller": {
+        "assetName": "Propeller",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "quadrotor1": {
+        "assetName": "Quadrotor1",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    "mapleleaf01": {
+        "assetName": "MapleLeaf01",
+        "position": [
+            0.0,
+            0.0,
+            -0.0
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    }
+}
