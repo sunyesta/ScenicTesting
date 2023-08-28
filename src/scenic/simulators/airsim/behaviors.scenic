@@ -10,7 +10,6 @@ class MoveToPositionAction(Action):
         self.z = airsimPosition.z_val
 
     def applyTo(self, agent, simulation):
-        print("calling "+agent.realObjName)
         simulation.client.moveToPositionAsync(
             self.x,
             self.y,
@@ -18,7 +17,6 @@ class MoveToPositionAction(Action):
             5,
             vehicle_name=agent.realObjName,
         )
-        print("finished calling")
 
 
 class MoveByVelocityAction(Action):
@@ -30,7 +28,6 @@ class MoveByVelocityAction(Action):
         self.duration = duration
 
     def applyTo(self, agent, simulation):
-        print("calling " + agent.realObjName)
         simulation.client.moveByVelocityAsync(
             self.x,
             self.y,
@@ -39,17 +36,30 @@ class MoveByVelocityAction(Action):
             vehicle_name=agent.realObjName,
         )
 
+class FollowAction(Action):
+    def __init__(self, obj):
+        airsimPosition = scenicToAirsimLocation(obj.position)
+        self.x = airsimPosition.x_val
+        self.y = airsimPosition.y_val
+        self.z = airsimPosition.z_val
+
+    def applyTo(self, agent, simulation):
+        simulation.client.moveToPositionAsync(
+            self.x,
+            self.y,
+            self.z,
+            1,
+            vehicle_name=agent.realObjName,
+        )
+
 
 behavior FlyToPosition(position, tolerance = 1):
 
     if distance from self to position < tolerance:
         return
-    print(self.position,distance from self to position )
     take MoveToPositionAction(position)
     while distance from self to position > tolerance:
-        print(self.position,distance from self to position )
         wait
-    print("got to position: ",position)
 
 behavior Patrol(positions, loop=True):
     
@@ -69,7 +79,15 @@ behavior MoveByVelocity(position,seconds):
 
     while simulation().currentRealTime < endTime:
         wait
-    
+
+# ? how to run
+behavior FlyToStart():
+    print(self._startPos)
+    do FlyToPosition(self._startPos)
+
     
 
 
+behavior Follow(obj,tolerance=1):
+    if distance from self to obj.position > tolerance:
+        take FollowAction(obj)

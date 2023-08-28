@@ -27,8 +27,6 @@ import airsim
 
 class AirSimSimulator(Simulator):
     def __init__(self, map_path, timestep=0.1):
-        print("dsafds")
-
         # print(airsim.Vector3r(100, 100, 100))
 
         # initializing airsim
@@ -70,49 +68,24 @@ class AirSimSimulation(Simulation):
         self.client.simPause(True)
 
         self.joinables = []
-        self.startDrones = self.client.listVehicles()
         self.objTrove = []
-        neededDrones = list(
-            filter(lambda obj: obj.blueprint == "Drone", self.scene.objects)
-        )
 
-        hiddenPose = airsim.Pose(position_val=airsim.Vector3r(0, 0, 0))
-
-        # add neccessary drones
-
-        for i in range(len(self.startDrones), len(neededDrones)):
-            print("added drone")
-            # TODO make drone names non conflicting
-            drone = str(random.randint(1, 1000))
-            self.client.simAddVehicle(
-                vehicle_name=drone,
-                vehicle_type="simpleflight",
-                pose=hiddenPose,
-            )
         self.startDrones = self.client.listVehicles()
-        print("startDrones = " + str(self.startDrones))
-
-        # TODO find ground and place drone on ground
-        # TODO make artificial ground
-        for drone in self.startDrones:
-            newPose = airsim.Pose(
-                position_val=airsim.Vector3r(
-                    random.randint(1, 100), random.randint(1, 100), 10
-                )
-            )
-            self.client.simSetVehiclePose(newPose, True, drone)
-
+        self.client.simPause(False)
+        for i, drone in enumerate(self.startDrones):
+            # todo make storage position an option
+            newPose = airsim.Pose(position_val=airsim.Vector3r(i, -1000, -1000))
             self.client.enableApiControl(True, drone)
-            self.client.armDisarm(True, drone)
-            self.client.landAsync(vehicle_name=drone)
-            self.joinables.append(self.client.takeoffAsync(vehicle_name=drone))
-        self.waitForJoinables()
+            self.client.simSetVehiclePose(
+                vehicle_name=drone, pose=newPose, ignore_collision=False
+            )
+            self.client.moveByVelocityAsync(0, 0, 0, 1, vehicle_name=drone)
 
+        self.client.simPause(True)
         self.nextAvalibleDroneIndex = 0
 
         # create objs
         super().setup()
-        self.waitForJoinables()
 
     def createObjectInSimulator(self, obj):
         # ------ set default values ------
@@ -137,39 +110,35 @@ class AirSimSimulation(Simulation):
         )
 
         if obj.blueprint == "Drone":
+            # ? here or constructor. Might interfere with parent location
+            obj._startPos = obj.position
+
             # if there is an avalible drone, take it
             if self.nextAvalibleDroneIndex < len(self.startDrones):
                 realObjName = self.startDrones[self.nextAvalibleDroneIndex]
-                print("created type1: " + realObjName)
                 self.nextAvalibleDroneIndex += 1
-
-                self.objs[obj.name] = realObjName
                 obj.realObjName = realObjName
-                self.client.simSetVehiclePose(
-                    vehicle_name=realObjName, pose=pose, ignore_collision=True
-                )
-                self.joinables.append(
-                    self.client.moveToPositionAsync(
-                        pose.position.x_val,
-                        pose.position.y_val,
-                        pose.position.z_val,
-                        velocity=5,
-                        vehicle_name=realObjName,
-                    )
-                )
             else:
-                assert False
-                # if no avalible drone, create a new one
-                print("created type2: " + realObjName)
-                self.objs[obj.name] = realObjName
                 self.client.simAddVehicle(
                     vehicle_name=realObjName, vehicle_type="simpleflight", pose=pose
                 )
-                self.client.enableApiControl(True, realObjName)
+            self.objs[obj.name] = realObjName
+            self.client.enableApiControl(True, realObjName)
+            self.client.armDisarm(True, realObjName)
+
+            self.client.simSetVehiclePose(
+                vehicle_name=realObjName, pose=pose, ignore_collision=True
+            )
+
+            if obj.startHovering:
+                self.client.moveByVelocityAsync(0, 0, 0, 1, vehicle_name=realObjName)
+            else:
+                # shut off drone propellers
+                self.client.moveByVelocityAsync(0, 0, 0, -1, vehicle_name=realObjName)
 
         else:
             if not (obj.assetName in self.client.simListAssets()):
-                # ? simulation keeps restarting when simulation creation error is thrown
+                # todo make a runtime error instead
                 raise SimulationCreationError(
                     "no asset of name found: " + obj.assetName
                 )
@@ -194,7 +163,6 @@ class AirSimSimulation(Simulation):
 
         time.sleep(4)
 
-        print("new pose = " + str(self.client.simGetVehiclePose().position))
         # print("new pose = "+str(pose.position))
 
         # joinable = self.client.moveToPositionAsync(
@@ -309,6 +277,7 @@ class AirSimSimulation(Simulation):
 
 
 # -------------- Static helper functions --------------
+scaleFactor = 0.01
 
 
 def tupleToVector3r(tuple):
@@ -337,11 +306,16 @@ def scenicToAirsimLocation(position):
 
 
 def airsimToScenicLocation(position):
-    return Vector(position.x_val, position.y_val, -position.z_val)
+    return Vector(
+        position.x_val,
+        position.y_val,
+        -position.z_val,
+    )
 
 
 def scenicToAirsimScale(obj):
     # TODO fix scale ratio
+
     # movment function in meters
     # drone size in blender is 98.1694 m
     # coords scaled by 100? https://microsoft.github.io/AirSim/apis/#:~:text=All%20AirSim%20API%20uses%20NED,in%20centimeters%20instead%20of%20meters.
