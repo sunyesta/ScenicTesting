@@ -1,10 +1,11 @@
-{
-    "cone_5": {
+[
+    {
+        "name": "cone_5",
         "assetName": "Cone",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            34.5,
+            -34.39999771118164,
+            -1.6799999475479126
         ],
         "orientation": [
             0.0,
@@ -12,12 +13,13 @@
             0.0
         ]
     },
-    "cylinder2": {
+    {
+        "name": "cylinder2",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -46.79999923706055,
+            -94.0,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -25,12 +27,13 @@
             0.0
         ]
     },
-    "cylinder3": {
+    {
+        "name": "cylinder3",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -43.70000076293945,
+            -95.0,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -38,12 +41,13 @@
             0.0
         ]
     },
-    "cylinder4": {
+    {
+        "name": "cylinder4",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -37.0,
+            -95.0,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -51,12 +55,13 @@
             0.0
         ]
     },
-    "cylinder5": {
+    {
+        "name": "cylinder5",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -39.599998474121094,
+            -92.0,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -64,12 +69,13 @@
             0.0
         ]
     },
-    "cylinder6": {
+    {
+        "name": "cylinder6",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -41.89999771118164,
+            -97.0999984741211,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -77,12 +83,13 @@
             0.0
         ]
     },
-    "cylinder7": {
+    {
+        "name": "cylinder7",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -42.39999771118164,
+            -89.79999542236328,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -90,12 +97,13 @@
             0.0
         ]
     },
-    "cylinder8": {
+    {
+        "name": "cylinder8",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -40.0,
+            -99.29999542236328,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -103,12 +111,13 @@
             0.0
         ]
     },
-    "cylinder_2": {
+    {
+        "name": "cylinder_2",
         "assetName": "Cylinder",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -45.5,
+            -87.79999542236328,
+            -0.47999998927116394
         ],
         "orientation": [
             0.0,
@@ -116,12 +125,13 @@
             0.0
         ]
     },
-    "ground": {
+    {
+        "name": "ground",
         "assetName": "TemplateFloor",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -56.89999771118164,
+            -1.5,
+            1.0199999809265137
         ],
         "orientation": [
             0.0,
@@ -129,12 +139,13 @@
             0.0
         ]
     },
-    "ground_2": {
+    {
+        "name": "ground_2",
         "assetName": "TemplateFloor",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -56.89999771118164,
+            78.5,
+            1.0199999809265137
         ],
         "orientation": [
             0.0,
@@ -142,12 +153,13 @@
             0.0
         ]
     },
-    "ground_3": {
+    {
+        "name": "ground_3",
         "assetName": "TemplateFloor",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            23.100000381469727,
+            78.5,
+            1.0199999809265137
         ],
         "orientation": [
             0.0,
@@ -155,12 +167,13 @@
             0.0
         ]
     },
-    "ground_4": {
+    {
+        "name": "ground_4",
         "assetName": "TemplateFloor",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -56.89999771118164,
+            -81.5,
+            1.0199999809265137
         ],
         "orientation": [
             0.0,
@@ -168,12 +181,13 @@
             0.0
         ]
     },
-    "ground_5": {
+    {
+        "name": "ground_5",
         "assetName": "TemplateFloor",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            23.100000381469727,
+            -1.899999976158142,
+            1.0199999809265137
         ],
         "orientation": [
             0.0,
@@ -181,12 +195,13 @@
             0.0
         ]
     },
-    "ground_6": {
+    {
+        "name": "ground_6",
         "assetName": "TemplateFloor",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            23.100000381469727,
+            -81.5,
+            1.0199999809265137
         ],
         "orientation": [
             0.0,
@@ -194,12 +209,13 @@
             0.0
         ]
     },
-    "orangeball": {
+    {
+        "name": "orangeball",
         "assetName": "Sphere",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            34.25,
+            33.099998474121094,
+            -3.684560537338257
         ],
         "orientation": [
             0.0,
@@ -207,12 +223,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_1": {
+    {
+        "name": "templatecube_rounded_1",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -16.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -220,12 +237,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_10": {
+    {
+        "name": "templatecube_rounded_10",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            -26.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -233,12 +251,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_100": {
+    {
+        "name": "templatecube_rounded_100",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            23.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -246,12 +265,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_101": {
+    {
+        "name": "templatecube_rounded_101",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            33.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -259,12 +279,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_102": {
+    {
+        "name": "templatecube_rounded_102",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            23.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -272,12 +293,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_103": {
+    {
+        "name": "templatecube_rounded_103",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -6.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -285,12 +307,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_104": {
+    {
+        "name": "templatecube_rounded_104",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -16.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -298,12 +321,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_105": {
+    {
+        "name": "templatecube_rounded_105",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            13.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -311,12 +335,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_106": {
+    {
+        "name": "templatecube_rounded_106",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            13.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -324,12 +349,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_108": {
+    {
+        "name": "templatecube_rounded_108",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            3.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -337,12 +363,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_109": {
+    {
+        "name": "templatecube_rounded_109",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -56.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -350,12 +377,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_110": {
+    {
+        "name": "templatecube_rounded_110",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -56.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -363,12 +391,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_111": {
+    {
+        "name": "templatecube_rounded_111",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -66.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -376,12 +405,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_112": {
+    {
+        "name": "templatecube_rounded_112",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -66.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -389,12 +419,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_113": {
+    {
+        "name": "templatecube_rounded_113",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -66.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -402,12 +433,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_114": {
+    {
+        "name": "templatecube_rounded_114",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -66.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -415,12 +447,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_115": {
+    {
+        "name": "templatecube_rounded_115",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -6.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -428,12 +461,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_116": {
+    {
+        "name": "templatecube_rounded_116",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -16.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -441,12 +475,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_117": {
+    {
+        "name": "templatecube_rounded_117",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            13.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -454,12 +489,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_119": {
+    {
+        "name": "templatecube_rounded_119",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            63.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -467,12 +503,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_120": {
+    {
+        "name": "templatecube_rounded_120",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            63.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -480,12 +517,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_121": {
+    {
+        "name": "templatecube_rounded_121",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            63.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -493,12 +531,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_122": {
+    {
+        "name": "templatecube_rounded_122",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            63.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -506,12 +545,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_123": {
+    {
+        "name": "templatecube_rounded_123",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            53.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -519,12 +559,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_124": {
+    {
+        "name": "templatecube_rounded_124",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            -16.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -532,12 +573,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_125": {
+    {
+        "name": "templatecube_rounded_125",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -16.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -545,12 +587,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_126": {
+    {
+        "name": "templatecube_rounded_126",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -6.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -558,12 +601,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_128": {
+    {
+        "name": "templatecube_rounded_128",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            3.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -571,12 +615,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_129": {
+    {
+        "name": "templatecube_rounded_129",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            63.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -584,12 +629,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_13": {
+    {
+        "name": "templatecube_rounded_13",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            -36.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -597,12 +643,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_130": {
+    {
+        "name": "templatecube_rounded_130",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            63.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -610,12 +657,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_131": {
+    {
+        "name": "templatecube_rounded_131",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -56.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -623,12 +671,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_132": {
+    {
+        "name": "templatecube_rounded_132",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -56.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -636,12 +685,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_133": {
+    {
+        "name": "templatecube_rounded_133",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            13.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -649,12 +699,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_134": {
+    {
+        "name": "templatecube_rounded_134",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -56.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -662,12 +713,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_135": {
+    {
+        "name": "templatecube_rounded_135",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -66.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -675,12 +727,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_136": {
+    {
+        "name": "templatecube_rounded_136",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -66.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -688,12 +741,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_137": {
+    {
+        "name": "templatecube_rounded_137",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -66.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -701,12 +755,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_138": {
+    {
+        "name": "templatecube_rounded_138",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            3.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -714,12 +769,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_139": {
+    {
+        "name": "templatecube_rounded_139",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            13.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -727,12 +783,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_140": {
+    {
+        "name": "templatecube_rounded_140",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -66.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -740,12 +797,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_141": {
+    {
+        "name": "templatecube_rounded_141",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            63.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -753,12 +811,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_142": {
+    {
+        "name": "templatecube_rounded_142",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            53.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -766,12 +825,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_143": {
+    {
+        "name": "templatecube_rounded_143",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            53.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -779,12 +839,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_144": {
+    {
+        "name": "templatecube_rounded_144",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            53.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -792,12 +853,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_145": {
+    {
+        "name": "templatecube_rounded_145",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -56.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -805,12 +867,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_146": {
+    {
+        "name": "templatecube_rounded_146",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            53.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -818,12 +881,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_147": {
+    {
+        "name": "templatecube_rounded_147",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -6.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -831,12 +895,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_148": {
+    {
+        "name": "templatecube_rounded_148",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -16.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -844,12 +909,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_149": {
+    {
+        "name": "templatecube_rounded_149",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            13.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -857,12 +923,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_150": {
+    {
+        "name": "templatecube_rounded_150",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            3.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -870,12 +937,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_151": {
+    {
+        "name": "templatecube_rounded_151",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            -56.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -883,12 +951,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_152": {
+    {
+        "name": "templatecube_rounded_152",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            -56.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -896,12 +965,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_153": {
+    {
+        "name": "templatecube_rounded_153",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -16.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -909,12 +979,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_154": {
+    {
+        "name": "templatecube_rounded_154",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            53.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -922,12 +993,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_155": {
+    {
+        "name": "templatecube_rounded_155",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -6.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -935,12 +1007,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_156": {
+    {
+        "name": "templatecube_rounded_156",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -16.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -948,12 +1021,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_157": {
+    {
+        "name": "templatecube_rounded_157",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            13.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -961,12 +1035,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_158": {
+    {
+        "name": "templatecube_rounded_158",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            3.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -974,12 +1049,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_159": {
+    {
+        "name": "templatecube_rounded_159",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -116.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -987,12 +1063,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_160": {
+    {
+        "name": "templatecube_rounded_160",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -116.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1000,12 +1077,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_173": {
+    {
+        "name": "templatecube_rounded_173",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            113.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1013,12 +1091,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_174": {
+    {
+        "name": "templatecube_rounded_174",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            113.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1026,12 +1105,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_175": {
+    {
+        "name": "templatecube_rounded_175",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            103.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1039,12 +1119,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_176": {
+    {
+        "name": "templatecube_rounded_176",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            103.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1052,12 +1133,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_185": {
+    {
+        "name": "templatecube_rounded_185",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -92.0,
+            113.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1065,12 +1147,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_186": {
+    {
+        "name": "templatecube_rounded_186",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -91.9000015258789,
+            113.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1078,12 +1161,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_187": {
+    {
+        "name": "templatecube_rounded_187",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -91.9000015258789,
+            103.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1091,12 +1175,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_196": {
+    {
+        "name": "templatecube_rounded_196",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -91.9000015258789,
+            -106.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1104,12 +1189,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_197": {
+    {
+        "name": "templatecube_rounded_197",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -91.9000015258789,
+            -116.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1117,12 +1203,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_198": {
+    {
+        "name": "templatecube_rounded_198",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -91.9000015258789,
+            -116.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1130,12 +1217,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_199": {
+    {
+        "name": "templatecube_rounded_199",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            -106.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1143,12 +1231,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_200": {
+    {
+        "name": "templatecube_rounded_200",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            -106.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1156,12 +1245,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_209": {
+    {
+        "name": "templatecube_rounded_209",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -106.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1169,12 +1259,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_210": {
+    {
+        "name": "templatecube_rounded_210",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -116.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1182,12 +1273,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_211": {
+    {
+        "name": "templatecube_rounded_211",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -106.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1195,12 +1287,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_212": {
+    {
+        "name": "templatecube_rounded_212",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -116.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1208,12 +1301,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_217": {
+    {
+        "name": "templatecube_rounded_217",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -56.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1221,12 +1315,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_218": {
+    {
+        "name": "templatecube_rounded_218",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -56.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1234,12 +1329,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_231": {
+    {
+        "name": "templatecube_rounded_231",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            53.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1247,12 +1343,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_232": {
+    {
+        "name": "templatecube_rounded_232",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            53.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1260,12 +1357,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_233": {
+    {
+        "name": "templatecube_rounded_233",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            53.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1273,12 +1371,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_234": {
+    {
+        "name": "templatecube_rounded_234",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            53.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1286,12 +1385,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_243": {
+    {
+        "name": "templatecube_rounded_243",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            53.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1299,12 +1399,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_244": {
+    {
+        "name": "templatecube_rounded_244",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            53.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1312,12 +1413,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_245": {
+    {
+        "name": "templatecube_rounded_245",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            53.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1325,12 +1427,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_246": {
+    {
+        "name": "templatecube_rounded_246",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            63.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1338,12 +1441,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_247": {
+    {
+        "name": "templatecube_rounded_247",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            63.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1351,12 +1455,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_256": {
+    {
+        "name": "templatecube_rounded_256",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -56.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1364,12 +1469,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_257": {
+    {
+        "name": "templatecube_rounded_257",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -66.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1377,12 +1483,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_26": {
+    {
+        "name": "templatecube_rounded_26",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            13.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1390,12 +1497,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_266": {
+    {
+        "name": "templatecube_rounded_266",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            -56.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1403,12 +1511,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_267": {
+    {
+        "name": "templatecube_rounded_267",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            18.100000381469727,
+            53.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1416,12 +1525,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_268": {
+    {
+        "name": "templatecube_rounded_268",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            63.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1429,12 +1539,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_269": {
+    {
+        "name": "templatecube_rounded_269",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -66.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1442,12 +1553,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_282": {
+    {
+        "name": "templatecube_rounded_282",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            -16.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1455,12 +1567,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_283": {
+    {
+        "name": "templatecube_rounded_283",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            13.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1468,12 +1581,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_284": {
+    {
+        "name": "templatecube_rounded_284",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            13.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1481,12 +1595,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_31": {
+    {
+        "name": "templatecube_rounded_31",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            -16.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1494,12 +1609,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_4": {
+    {
+        "name": "templatecube_rounded_4",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            23.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1507,12 +1623,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_45": {
+    {
+        "name": "templatecube_rounded_45",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            13.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1520,12 +1637,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_47": {
+    {
+        "name": "templatecube_rounded_47",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            3.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1533,12 +1651,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_48": {
+    {
+        "name": "templatecube_rounded_48",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            -26.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1546,12 +1665,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_49": {
+    {
+        "name": "templatecube_rounded_49",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            -26.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1559,12 +1679,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_50": {
+    {
+        "name": "templatecube_rounded_50",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            13.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1572,12 +1693,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_51": {
+    {
+        "name": "templatecube_rounded_51",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            3.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1585,12 +1707,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_52": {
+    {
+        "name": "templatecube_rounded_52",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            -36.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1598,12 +1721,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_53": {
+    {
+        "name": "templatecube_rounded_53",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            3.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1611,12 +1735,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_54": {
+    {
+        "name": "templatecube_rounded_54",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            13.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1624,12 +1749,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_55": {
+    {
+        "name": "templatecube_rounded_55",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            -36.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1637,12 +1763,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_56": {
+    {
+        "name": "templatecube_rounded_56",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            -36.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1650,12 +1777,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_57": {
+    {
+        "name": "templatecube_rounded_57",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            3.5,
+            -21.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1663,12 +1791,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_6": {
+    {
+        "name": "templatecube_rounded_6",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            -26.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1676,12 +1805,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_60": {
+    {
+        "name": "templatecube_rounded_60",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            53.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1689,12 +1819,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_61": {
+    {
+        "name": "templatecube_rounded_61",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            23.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1702,12 +1833,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_62": {
+    {
+        "name": "templatecube_rounded_62",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            23.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1715,12 +1847,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_63": {
+    {
+        "name": "templatecube_rounded_63",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            -56.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1728,12 +1861,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_64": {
+    {
+        "name": "templatecube_rounded_64",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -71.9000015258789,
+            -56.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1741,12 +1875,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_65": {
+    {
+        "name": "templatecube_rounded_65",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            33.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1754,12 +1889,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_66": {
+    {
+        "name": "templatecube_rounded_66",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            33.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1767,12 +1903,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_67": {
+    {
+        "name": "templatecube_rounded_67",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -106.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1780,12 +1917,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_68": {
+    {
+        "name": "templatecube_rounded_68",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            -106.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1793,12 +1931,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_69": {
+    {
+        "name": "templatecube_rounded_69",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            -36.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1806,12 +1945,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_7": {
+    {
+        "name": "templatecube_rounded_7",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            23.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1819,12 +1959,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_70": {
+    {
+        "name": "templatecube_rounded_70",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            -36.5,
+            -16.479999542236328
         ],
         "orientation": [
             0.0,
@@ -1832,12 +1973,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_71": {
+    {
+        "name": "templatecube_rounded_71",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -106.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1845,12 +1987,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_72": {
+    {
+        "name": "templatecube_rounded_72",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -106.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1858,12 +2001,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_73": {
+    {
+        "name": "templatecube_rounded_73",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -116.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1871,12 +2015,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_74": {
+    {
+        "name": "templatecube_rounded_74",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            48.099998474121094,
+            -116.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1884,12 +2029,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_75": {
+    {
+        "name": "templatecube_rounded_75",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -6.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1897,12 +2043,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_76": {
+    {
+        "name": "templatecube_rounded_76",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -6.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1910,12 +2057,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_77": {
+    {
+        "name": "templatecube_rounded_77",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -16.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1923,12 +2071,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_78": {
+    {
+        "name": "templatecube_rounded_78",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            -16.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1936,12 +2085,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_79": {
+    {
+        "name": "templatecube_rounded_79",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            113.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1949,12 +2099,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_8": {
+    {
+        "name": "templatecube_rounded_8",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            33.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1962,12 +2113,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_80": {
+    {
+        "name": "templatecube_rounded_80",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            113.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -1975,12 +2127,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_81": {
+    {
+        "name": "templatecube_rounded_81",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            103.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -1988,12 +2141,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_82": {
+    {
+        "name": "templatecube_rounded_82",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            58.099998474121094,
+            103.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2001,12 +2155,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_83": {
+    {
+        "name": "templatecube_rounded_83",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            13.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2014,12 +2169,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_84": {
+    {
+        "name": "templatecube_rounded_84",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            3.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2027,12 +2183,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_85": {
+    {
+        "name": "templatecube_rounded_85",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            28.099998474121094,
+            3.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2040,12 +2197,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_86": {
+    {
+        "name": "templatecube_rounded_86",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -92.0,
+            103.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2053,12 +2211,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_87": {
+    {
+        "name": "templatecube_rounded_87",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            113.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2066,12 +2225,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_88": {
+    {
+        "name": "templatecube_rounded_88",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            113.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2079,12 +2239,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_89": {
+    {
+        "name": "templatecube_rounded_89",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -82.0,
+            103.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2092,12 +2253,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_9": {
+    {
+        "name": "templatecube_rounded_9",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -31.899999618530273,
+            33.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2105,12 +2267,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_90": {
+    {
+        "name": "templatecube_rounded_90",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            103.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2118,12 +2281,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_91": {
+    {
+        "name": "templatecube_rounded_91",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -91.9000015258789,
+            -106.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2131,12 +2295,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_92": {
+    {
+        "name": "templatecube_rounded_92",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            -6.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -2144,12 +2309,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_93": {
+    {
+        "name": "templatecube_rounded_93",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            13.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2157,12 +2323,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_94": {
+    {
+        "name": "templatecube_rounded_94",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            13.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2170,12 +2337,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_96": {
+    {
+        "name": "templatecube_rounded_96",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            38.099998474121094,
+            3.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -2183,12 +2351,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_97": {
+    {
+        "name": "templatecube_rounded_97",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            -116.5,
+            -6.480000019073486
         ],
         "orientation": [
             0.0,
@@ -2196,12 +2365,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_98": {
+    {
+        "name": "templatecube_rounded_98",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -81.9000015258789,
+            -116.5,
+            -1.4800000190734863
         ],
         "orientation": [
             0.0,
@@ -2209,12 +2379,13 @@
             0.0
         ]
     },
-    "templatecube_rounded_99": {
+    {
+        "name": "templatecube_rounded_99",
         "assetName": "1M_Cube_Chamfer",
         "position": [
-            0.0,
-            0.0,
-            -0.0
+            -21.899999618530273,
+            33.5,
+            -11.479999542236328
         ],
         "orientation": [
             0.0,
@@ -2222,12 +2393,27 @@
             0.0
         ]
     },
-    "externalcamera": {
+    {
+        "name": "externalcamera",
         "assetName": "Cone",
         "position": [
+            -3.0,
+            0.0,
+            -1.2165274620056152
+        ],
+        "orientation": [
+            -0.5972361156044204,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "simpleflight",
+        "assetName": "Quadrotor1",
+        "position": [
             0.0,
             0.0,
-            -0.0
+            0.8237193822860718
         ],
         "orientation": [
             0.0,
@@ -2235,12 +2421,41 @@
             0.0
         ]
     },
-    "simpleflight": {
+    {
+        "name": "bp_pipcamera_c_2147482509",
+        "assetName": "Cone",
+        "position": [
+            0.4599999785423279,
+            0.125,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "bp_pipcamera_c_2147482498",
+        "assetName": "Cone",
+        "position": [
+            0.4599999785423279,
+            -0.125,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "simpleflight",
         "assetName": "Propeller",
         "position": [
             0.0,
             0.0,
-            -0.0
+            0.8237193822860718
         ],
         "orientation": [
             0.0,
@@ -2248,72 +2463,92 @@
             0.0
         ]
     },
-    "bp_pipcamera_c_2147482509": {
+    {
+        "name": "simpleflight",
+        "assetName": "Propeller",
+        "position": [
+            0.0,
+            0.0,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "simpleflight",
+        "assetName": "Propeller",
+        "position": [
+            0.0,
+            0.0,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "simpleflight",
+        "assetName": "Propeller",
+        "position": [
+            0.0,
+            0.0,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "bp_pipcamera_c_2147482487",
+        "assetName": "Cone",
+        "position": [
+            0.4599999785423279,
+            0.0,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            0.0
+        ]
+    },
+    {
+        "name": "bp_pipcamera_c_2147482476",
+        "assetName": "Cone",
+        "position": [
+            -0.4599999785423279,
+            0.0,
+            0.8237193822860718
+        ],
+        "orientation": [
+            0.0,
+            0.0,
+            -3.1415922959618605
+        ]
+    },
+    {
+        "name": "bp_pipcamera_c_2147482465",
         "assetName": "Cone",
         "position": [
             0.0,
             0.0,
-            -0.0
+            0.9437193870544434
         ],
         "orientation": [
-            0.0,
+            -1.570309454656242,
             0.0,
             0.0
         ]
     },
-    "bp_pipcamera_c_2147482498": {
-        "assetName": "Cone",
-        "position": [
-            0.0,
-            0.0,
-            -0.0
-        ],
-        "orientation": [
-            0.0,
-            0.0,
-            0.0
-        ]
-    },
-    "bp_pipcamera_c_2147482487": {
-        "assetName": "Cone",
-        "position": [
-            0.0,
-            0.0,
-            -0.0
-        ],
-        "orientation": [
-            0.0,
-            0.0,
-            0.0
-        ]
-    },
-    "bp_pipcamera_c_2147482476": {
-        "assetName": "Cone",
-        "position": [
-            0.0,
-            0.0,
-            -0.0
-        ],
-        "orientation": [
-            0.0,
-            0.0,
-            0.0
-        ]
-    },
-    "bp_pipcamera_c_2147482465": {
-        "assetName": "Cone",
-        "position": [
-            0.0,
-            0.0,
-            -0.0
-        ],
-        "orientation": [
-            0.0,
-            0.0,
-            0.0
-        ]
-    },
-    "sphere1": {
+    {
+        "name": "sphere1",
         "assetName": "Sphere",
         "position": [
             0.0,
@@ -2326,7 +2561,8 @@
             0.0
         ]
     },
-    "cone6": {
+    {
+        "name": "cone6",
         "assetName": "Cone",
         "position": [
             0.0,
@@ -2339,7 +2575,8 @@
             0.0
         ]
     },
-    "cylinder9": {
+    {
+        "name": "cylinder9",
         "assetName": "Cylinder",
         "position": [
             0.0,
@@ -2352,7 +2589,8 @@
             0.0
         ]
     },
-    "sm_skysphere": {
+    {
+        "name": "sm_skysphere",
         "assetName": "SM_SkySphere",
         "position": [
             0.0,
@@ -2365,7 +2603,8 @@
             0.0
         ]
     },
-    "templatefloor": {
+    {
+        "name": "templatefloor",
         "assetName": "TemplateFloor",
         "position": [
             0.0,
@@ -2378,7 +2617,8 @@
             0.0
         ]
     },
-    "1m_cube_chamfer": {
+    {
+        "name": "1m_cube_chamfer",
         "assetName": "1M_Cube_Chamfer",
         "position": [
             0.0,
@@ -2391,7 +2631,8 @@
             0.0
         ]
     },
-    "s_1_unit_plane": {
+    {
+        "name": "s_1_unit_plane",
         "assetName": "S_1_Unit_Plane",
         "position": [
             0.0,
@@ -2404,7 +2645,8 @@
             0.0
         ]
     },
-    "cube285": {
+    {
+        "name": "cube285",
         "assetName": "Cube",
         "position": [
             0.0,
@@ -2417,7 +2659,8 @@
             0.0
         ]
     },
-    "plane1": {
+    {
+        "name": "plane1",
         "assetName": "Plane",
         "position": [
             0.0,
@@ -2430,7 +2673,8 @@
             0.0
         ]
     },
-    "sm_cranerig_arm": {
+    {
+        "name": "sm_cranerig_arm",
         "assetName": "SM_CraneRig_Arm",
         "position": [
             0.0,
@@ -2443,7 +2687,8 @@
             0.0
         ]
     },
-    "sm_cranerig_base": {
+    {
+        "name": "sm_cranerig_base",
         "assetName": "SM_CraneRig_Base",
         "position": [
             0.0,
@@ -2456,7 +2701,8 @@
             0.0
         ]
     },
-    "sm_cranerig_body": {
+    {
+        "name": "sm_cranerig_body",
         "assetName": "SM_CraneRig_Body",
         "position": [
             0.0,
@@ -2469,7 +2715,8 @@
             0.0
         ]
     },
-    "sm_cranerig_mount": {
+    {
+        "name": "sm_cranerig_mount",
         "assetName": "SM_CraneRig_Mount",
         "position": [
             0.0,
@@ -2482,7 +2729,8 @@
             0.0
         ]
     },
-    "sm_railrig_mount": {
+    {
+        "name": "sm_railrig_mount",
         "assetName": "SM_RailRig_Mount",
         "position": [
             0.0,
@@ -2495,7 +2743,8 @@
             0.0
         ]
     },
-    "sm_railrig_track": {
+    {
+        "name": "sm_railrig_track",
         "assetName": "SM_RailRig_Track",
         "position": [
             0.0,
@@ -2508,7 +2757,8 @@
             0.0
         ]
     },
-    "boundingboxcorner": {
+    {
+        "name": "boundingboxcorner",
         "assetName": "BoundingBoxCorner",
         "position": [
             0.0,
@@ -2521,7 +2771,8 @@
             0.0
         ]
     },
-    "boundingboxedge": {
+    {
+        "name": "boundingboxedge",
         "assetName": "BoundingBoxEdge",
         "position": [
             0.0,
@@ -2534,7 +2785,8 @@
             0.0
         ]
     },
-    "planetranslationhandle": {
+    {
+        "name": "planetranslationhandle",
         "assetName": "PlaneTranslationHandle",
         "position": [
             0.0,
@@ -2547,7 +2799,8 @@
             0.0
         ]
     },
-    "sm_sequencer_key": {
+    {
+        "name": "sm_sequencer_key",
         "assetName": "SM_Sequencer_Key",
         "position": [
             0.0,
@@ -2560,7 +2813,8 @@
             0.0
         ]
     },
-    "sm_sequencer_node": {
+    {
+        "name": "sm_sequencer_node",
         "assetName": "SM_Sequencer_Node",
         "position": [
             0.0,
@@ -2573,7 +2827,8 @@
             0.0
         ]
     },
-    "googledaydreamcontroller": {
+    {
+        "name": "googledaydreamcontroller",
         "assetName": "GoogleDaydreamController",
         "position": [
             0.0,
@@ -2586,7 +2841,8 @@
             0.0
         ]
     },
-    "htcvivecontroller": {
+    {
+        "name": "htcvivecontroller",
         "assetName": "HTCViveController",
         "position": [
             0.0,
@@ -2599,7 +2855,8 @@
             0.0
         ]
     },
-    "left_microsoftmixedrealitycontroller": {
+    {
+        "name": "left_microsoftmixedrealitycontroller",
         "assetName": "left_MicrosoftMixedRealityController",
         "position": [
             0.0,
@@ -2612,7 +2869,8 @@
             0.0
         ]
     },
-    "right_microsoftmixedrealitycontroller": {
+    {
+        "name": "right_microsoftmixedrealitycontroller",
         "assetName": "right_MicrosoftMixedRealityController",
         "position": [
             0.0,
@@ -2625,7 +2883,8 @@
             0.0
         ]
     },
-    "oculusgocontroller": {
+    {
+        "name": "oculusgocontroller",
         "assetName": "OculusGoController",
         "position": [
             0.0,
@@ -2638,7 +2897,8 @@
             0.0
         ]
     },
-    "left_oculustouchcontroller": {
+    {
+        "name": "left_oculustouchcontroller",
         "assetName": "left_OculusTouchController",
         "position": [
             0.0,
@@ -2651,7 +2911,8 @@
             0.0
         ]
     },
-    "right_oculustouchcontroller": {
+    {
+        "name": "right_oculustouchcontroller",
         "assetName": "right_OculusTouchController",
         "position": [
             0.0,
@@ -2664,7 +2925,8 @@
             0.0
         ]
     },
-    "left_oculustouch_v2controller": {
+    {
+        "name": "left_oculustouch_v2controller",
         "assetName": "left_OculusTouch_v2Controller",
         "position": [
             0.0,
@@ -2677,7 +2939,8 @@
             0.0
         ]
     },
-    "right_oculustouch_v2controller": {
+    {
+        "name": "right_oculustouch_v2controller",
         "assetName": "right_OculusTouch_v2Controller",
         "position": [
             0.0,
@@ -2690,7 +2953,8 @@
             0.0
         ]
     },
-    "left_oculustouch_v3controller": {
+    {
+        "name": "left_oculustouch_v3controller",
         "assetName": "left_OculusTouch_v3Controller",
         "position": [
             0.0,
@@ -2703,7 +2967,8 @@
             0.0
         ]
     },
-    "right_oculustouch_v3controller": {
+    {
+        "name": "right_oculustouch_v3controller",
         "assetName": "right_OculusTouch_v3Controller",
         "position": [
             0.0,
@@ -2716,7 +2981,8 @@
             0.0
         ]
     },
-    "left_valveindexcontroller": {
+    {
+        "name": "left_valveindexcontroller",
         "assetName": "left_ValveIndexController",
         "position": [
             0.0,
@@ -2729,7 +2995,8 @@
             0.0
         ]
     },
-    "right_valveindexcontroller": {
+    {
+        "name": "right_valveindexcontroller",
         "assetName": "right_ValveIndexController",
         "position": [
             0.0,
@@ -2742,7 +3009,8 @@
             0.0
         ]
     },
-    "propeller": {
+    {
+        "name": "propeller",
         "assetName": "Propeller",
         "position": [
             0.0,
@@ -2755,7 +3023,8 @@
             0.0
         ]
     },
-    "quadrotor1": {
+    {
+        "name": "quadrotor1",
         "assetName": "Quadrotor1",
         "position": [
             0.0,
@@ -2768,7 +3037,8 @@
             0.0
         ]
     },
-    "mapleleaf01": {
+    {
+        "name": "mapleleaf01",
         "assetName": "MapleLeaf01",
         "position": [
             0.0,
@@ -2781,4 +3051,4 @@
             0.0
         ]
     }
-}
+]

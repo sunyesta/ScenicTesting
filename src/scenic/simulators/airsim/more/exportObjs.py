@@ -25,7 +25,7 @@ client.simPause(True)
 
 assets = client.simListAssets()
 #! version 1
-
+# TODO try to get data using unreal command line
 # create objects of the assets
 objNameDict = {}
 
@@ -118,7 +118,6 @@ for assetName in assets:
 
 # ----------------- extract world info
 
-# todo makes meshes dict without added objs
 
 cleanedMeshes = []
 for mesh in meshes:
@@ -131,7 +130,7 @@ for mesh in meshes:
         cleanedMeshes.append(mesh)
 # print(indicesDict["Cone"])
 
-worldInfo = {}
+worldInfo = []
 for mesh in cleanedMeshes:
     indices = np.array(mesh.indices, dtype=np.uint32)
     assetName = None
@@ -145,14 +144,23 @@ for mesh in cleanedMeshes:
         print("no asset found for mesh ", mesh.name)
         continue
 
-    pose = client.simGetObjectPose(objName)
+    pose = None
+    pose = client.simGetObjectPose(mesh.name)
+    if assetName == "Quadrotor1":
+        print("QUADDDDDDDDDDD")
 
-    print(pose)
+    print(pose.position.get_length())
     position = (pose.position.x_val, pose.position.y_val, pose.position.z_val)
     orientation = airsim.to_eularian_angles(pose.orientation)
-
-    worldInfo[mesh.name] = dict(
-        assetName=assetName, position=position, orientation=orientation
+    # scale = (pose.scale.x_val, pose.scale.y_val, pose.scale.z_val)
+    worldInfo.append(
+        dict(
+            name=mesh.name,
+            assetName=assetName,
+            position=position,
+            orientation=orientation,
+            # scale=scale,
+        )
     )
 
 

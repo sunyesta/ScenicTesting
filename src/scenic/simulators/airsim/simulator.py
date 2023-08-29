@@ -22,11 +22,9 @@ from scenic.core.simulators import (
 
 import airsim
 
-# todo by next meeting
-
 
 class AirSimSimulator(Simulator):
-    def __init__(self, map_path, timestep=0.1):
+    def __init__(self, map_path, timestep=0.1, idleStoragePos=(0, 0, 0)):
         # print(airsim.Vector3r(100, 100, 100))
 
         # initializing airsim
@@ -40,7 +38,7 @@ class AirSimSimulator(Simulator):
             raise RuntimeError("Airsim must be running on before executing scenic")
 
         self.client = client
-
+        self.idleStoragePos = idleStoragePos
         super().__init__()
 
     def createSimulation(self, scene, **kwargs):
@@ -48,9 +46,6 @@ class AirSimSimulator(Simulator):
 
     def destroy(self):
         super().destroy()
-
-        # close simulator
-        # todo
 
 
 class AirSimSimulation(Simulation):
@@ -73,8 +68,10 @@ class AirSimSimulation(Simulation):
         self.startDrones = self.client.listVehicles()
         self.client.simPause(False)
         for i, drone in enumerate(self.startDrones):
-            # todo make storage position an option
-            newPose = airsim.Pose(position_val=airsim.Vector3r(i, -1000, -1000))
+            newPose = airsim.Pose(
+                position_val=scenicToAirsimLocation(self.simulator.idleStoragePos)
+                + airsim.Vector3r(i, 0, 0)
+            )
             self.client.enableApiControl(True, drone)
             self.client.simSetVehiclePose(
                 vehicle_name=drone, pose=newPose, ignore_collision=False
@@ -110,7 +107,6 @@ class AirSimSimulation(Simulation):
         )
 
         if obj.blueprint == "Drone":
-            # ? here or constructor. Might interfere with parent location
             obj._startPos = obj.position
 
             # if there is an avalible drone, take it
@@ -138,10 +134,7 @@ class AirSimSimulation(Simulation):
 
         else:
             if not (obj.assetName in self.client.simListAssets()):
-                # todo make a runtime error instead
-                raise SimulationCreationError(
-                    "no asset of name found: " + obj.assetName
-                )
+                raise RuntimeError("no asset of name found: " + obj.assetName)
 
             # print("creating:" + obj.name + " " + realObjName)
 
@@ -199,8 +192,7 @@ class AirSimSimulation(Simulation):
 
     def destroy(self):
         print("\n\n\ndestroying!!!")
-        # client = airsim.MultirotorClient()  # ? without this the program doesn't work
-        client = self.client
+        client = airsim.MultirotorClient()
         client.confirmConnection()
         client.simPause(True)
 
@@ -229,23 +221,22 @@ class AirSimSimulation(Simulation):
 
             angularVelocity = airsimToScenicLocation(kinematics.angular_velocity)
 
-        else:
+        elif obj.blueprint == "StaticObj":
             pose = self.client.simGetObjectPose(objName)
+
+            # static objs don't have velocity
             velocity = Vector(0, 0, 0)
             angularVelocity = Vector(0, 0, 0)
-            # todo unsure how to set values for non vehichles
 
         globalOrientation = airsimToScenicRotation(pose.orientation)
         yaw, pitch, roll = obj.parentOrientation.localAnglesFor(globalOrientation)
 
         location = airsimToScenicLocation(pose.position)
 
-        speed = (
-            velocity.x**2 + velocity.y**2 + velocity.z**2
-        ) ** 0.5  # TODO use Math.Hypot
-        angularSpeed = (
-            angularVelocity.x**2 + angularVelocity.y**2 + angularVelocity.z**2
-        ) ** 0.5
+        speed = math.hypot(velocity.x, velocity.y, velocity.z)
+        angularSpeed = math.hypot(
+            angularVelocity.x, angularVelocity.y, angularVelocity.z
+        )
 
         values = dict(
             position=location,
@@ -277,7 +268,6 @@ class AirSimSimulation(Simulation):
 
 
 # -------------- Static helper functions --------------
-scaleFactor = 0.01
 
 
 def tupleToVector3r(tuple):
@@ -314,8 +304,6 @@ def airsimToScenicLocation(position):
 
 
 def scenicToAirsimScale(obj):
-    # TODO fix scale ratio
-
     # movment function in meters
     # drone size in blender is 98.1694 m
     # coords scaled by 100? https://microsoft.github.io/AirSim/apis/#:~:text=All%20AirSim%20API%20uses%20NED,in%20centimeters%20instead%20of%20meters.
