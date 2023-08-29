@@ -8,10 +8,13 @@ import itertools
 import math
 import os
 import signal
+from subprocess import CalledProcessError
 import sys
 import typing
+import warnings
 import weakref
 
+import numpy
 import trimesh
 
 sqrt2 = math.sqrt(2)
@@ -141,6 +144,173 @@ def loadMesh(path, filetype, compressed, binary):
         mesh = trimesh.load(mesh_file, file_type=filetype)
 
     return mesh
+
+
+def unifyMesh(mesh, verbose=False):
+    """Attempt to merge mesh bodies, aborting if something fails.
+
+    Should only be used with meshes that are volumes. Returns the
+    original mesh if something goes wrong.
+    """
+    assert mesh.is_volume
+
+    # No need to unify a mesh with less than 2 bodies
+    if mesh.body_count < 2:
+        return mesh
+
+    mesh_bodies = mesh.split()
+
+    if not all(m.is_volume for m in mesh_bodies):
+        if verbose:
+            warnings.warn(
+                "The mesh that you loaded was composed of multiple bodies,"
+                " but Scenic was unable to unify it because some of those bodies"
+                " are non-volumetric (e.g. hollow portions of a volume). This is probably"
+                " not an issue, but note that if any of these bodies have"
+                " intersecting faces, Scenic may give undefined resuls. To suppress"
+                " this warning in the future, consider adding the 'unify=False' parameter"
+                " to your fromFile call."
+            )
+        return mesh
+
+    try:
+        unified_mesh = trimesh.boolean.union(mesh_bodies, engine="scad")
+    except CalledProcessError:
+        # Something went wrong, return the original mesh
+        if verbose:
+            warnings.warn(
+                "The mesh that you loaded was composed of multiple bodies,"
+                " but Scenic was unable to unify it because OpenSCAD raised"
+                " an error."
+            )
+        return mesh
+
+    # Check that the output is still a valid mesh
+    if unified_mesh.is_volume:
+        if verbose:
+            if unified_mesh.body_count == 1:
+                warnings.warn(
+                    "The mesh that you loaded was composed of multiple bodies,"
+                    " but Scenic was able to unify it into one single body. To save on compile"
+                    " time in the future, consider running unifyMesh on your mesh outside"
+                    " of Scenic and using that output instead."
+                )
+            elif unified_mesh.body_count < mesh.body_count:
+                warnings.warn(
+                    "The mesh that you loaded was composed of multiple bodies,"
+                    " but Scenic was able to unify it into fewer bodies. To save on compile"
+                    " time in the future, consider running unifyMesh on your mesh outside"
+                    " of Scenic and using that output instead. Note that if any of these"
+                    " bodies have intersecting faces, Scenic may give undefined resuls."
+                )
+
+        return unified_mesh
+    else:
+        if verbose:
+            warnings.warn(
+                "The mesh that you loaded was composed of multiple bodies,"
+                " and Scenic was unable to unify it into fewer bodies. To save on compile"
+                " time in the future, consider adding the 'unify=False' parameter to your"
+                " fromFile call. Note that if any of these bodies have intersecting faces,"
+                " Scenic may give undefined resuls."
+            )
+        return mesh
+
+
+def repairMesh(mesh, pitch=(1 / 2) ** 6, verbose=True):
+    """Attempt to repair a mesh, returning a proper 2-manifold.
+
+    Repair is attempted via several steps, each sacrificing more accuracy
+    but with a higher chance of returning a proper volumetric mesh.
+
+    Repair is first attempted with easy fixes, like merging vertices and fixing
+    winding. These will usually not deteriorate the quality of the mesh.
+
+    Repair is then attempted by voxelizing the mesh, filling it, and then running
+    marching cubes on the mesh. This approach is somewhat accurate but always
+    produces solid objects. (This is to be expected since non watertight hollow
+    objects aren't well defined).
+
+    Repair is finally attempted by using the convex hull, which is unlikely to
+    be accurate but is guaranteed to result in a volume.
+
+    Args:
+        mesh: The input mesh to be repaired.
+        pitch: The target pitch to be used when attempting to repair the mesh via
+            voxelization. The actual pitch used may be higher if needed to get a
+            manifold mesh.
+        verbose: Whether or not to print warnings describing attempts to repair the mesh.
+    """
+    # If mesh is already a volume, we're done.
+    if mesh.is_volume:
+        return mesh
+
+    ## Trimesh Processing ##
+    processed_mesh = mesh.process(validate=True, merge_tex=True, merge_norm=True).copy()
+
+    if processed_mesh.is_volume:
+        if verbose:
+            warnings.warn("Mesh was repaired via Trimesh process function.")
+
+        return processed_mesh
+
+    if verbose:
+        warnings.warn(
+            "Mesh could not be repaired via Trimesh process function."
+            " attempting voxelization + marching cubes."
+        )
+
+    ## Voxelization + Marching Cubes ##
+    # Extract largest dimension and scale so that it is unit length
+    dims = numpy.abs(processed_mesh.extents)
+    position = processed_mesh.bounding_box.center_mass
+    scale = numpy.max(dims)
+
+    processed_mesh.vertices -= position
+
+    scale_matrix = numpy.eye(4)
+    scale_matrix[:3, :3] /= scale
+    processed_mesh.apply_transform(scale_matrix)
+
+    # Compute new mesh with largest possible pitch
+    curr_pitch = pitch
+
+    while curr_pitch < 1:
+        new_mesh = processed_mesh.voxelized(pitch=curr_pitch).fill().marching_cubes
+
+        if new_mesh.is_volume:
+            if verbose:
+                warnings.warn(
+                    f"Mesh was repaired via voxelization + marching cubes"
+                    f" with pitch {curr_pitch}. Check the output to ensure it"
+                    f" looks reasonable."
+                )
+
+            # Center new mesh
+            new_mesh.vertices -= new_mesh.bounding_box.center_mass
+
+            # Rescale mesh to original size
+            orig_scale = new_mesh.extents / dims
+            scale_matrix = numpy.eye(4)
+            scale_matrix[:3, :3] /= orig_scale
+            new_mesh.apply_transform(scale_matrix)
+
+            # # Return mesh center to original position
+            new_mesh.vertices += position
+
+            return new_mesh
+
+        pitch *= 2
+
+    if verbose:
+        warnings.warn(
+            "Mesh could not be repaired via voxelization + marching cubes."
+            " Using convex hull."
+        )
+
+    ## Convex hull ##
+    # Guaranteed to work, but not very accurate.
+    return processed_mesh.convex_hull
 
 
 class DefaultIdentityDict:
