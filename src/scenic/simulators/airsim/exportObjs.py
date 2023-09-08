@@ -8,10 +8,16 @@ import trimesh
 import json
 import re
 import time
+from conversionUtils import (
+    airsimToScenicOrientationTuple,
+    airsimToScenicLocationTuple,
+)
 
 outputDirectory = (
     "/home/mary/Documents/AirSim/ScenicTesting/src/scenic/simulators/airsim/objs/cubes/"
 )
+os.makedirs(outputDirectory + "assets", exist_ok=True)
+os.makedirs(outputDirectory + "objectMeshes", exist_ok=True)
 
 
 def getAssetName(meshName):
@@ -50,41 +56,8 @@ for asset in assets:
             meshDict[asset] = mesh
             break
 
-#! version 2
 
-# meshesRaw = None
-# with open(
-#     "/home/mary/Documents/AirSim/ScenicTesting/src/scenic/simulators/airsim/more/meshData.json",
-#     "r",
-# ) as inFile:
-#     meshesRaw = json.load(inFile)
-
-
-# class MeshGood:
-#     def __init__(self, mesh):
-#         self.name = mesh["name"]
-#         self.vertices = mesh["vertices"]
-#         self.indices = mesh["indices"]
-#         self.assetName = mesh["assetName"]
-
-
-# meshes = []
-# for mesh in meshesRaw:
-#     meshes.append(MeshGood(mesh))
-
-# meshDict = {}
-# for mesh in meshes:
-#     if mesh.assetName:
-#         meshDict[mesh.assetName] = mesh
-
-# !!!!
-
-# save an obj file for each asset
-indicesDict = {}
-for assetName in assets:
-    if not (assetName in meshDict):
-        continue
-    mesh = meshDict[assetName]
+def makeTrimsh(mesh):
     vertex_list = np.array(mesh.vertices, dtype=np.float32)
     indices = np.array(mesh.indices, dtype=np.uint32)
 
@@ -105,12 +78,18 @@ for assetName in assets:
     else:
         tmesh.fix_normals()
 
-    # assert tmesh.is_volume
+    return tmesh
 
-    indicesDict[assetName] = indices
+
+# save an obj file for each asset
+for assetName in assets:
+    if not (assetName in meshDict):
+        continue
+    mesh = meshDict[assetName]
+    tmesh = makeTrimsh(mesh)
 
     with open(
-        outputDirectory + assetName + ".obj",
+        outputDirectory + "assets/" + assetName + ".obj",
         "w",
     ) as outfile:
         outfile.write(trimesh.exchange.obj.export_obj(tmesh))
@@ -122,46 +101,45 @@ for assetName in assets:
 cleanedMeshes = []
 for mesh in meshes:
     found = False
+
+    # check if mesh is in the created meshes
     for mesh2 in meshDict.values():
         if mesh.name == mesh2.name:
             found = True
             break
+
+    # check if mesh is a vehicle
+    for vehicle in client.listVehicles():
+        if mesh.name == vehicle:
+            found = True
+            break
+
+    # if mesh was not found in checks, add it to cleanedMeshes
     if not found:
         cleanedMeshes.append(mesh)
-# print(indicesDict["Cone"])
 
 worldInfo = []
 for mesh in cleanedMeshes:
-    indices = np.array(mesh.indices, dtype=np.uint32)
-    assetName = None
-    for assetName2, indices2 in indicesDict.items():
-        # print(indices2)
-        if np.array_equal(indices, indices2):
-            assetName = assetName2
-            break
+    tmesh = makeTrimsh(mesh)
 
-    if not assetName:
-        print("no asset found for mesh ", mesh.name)
-        continue
+    objectName = mesh.name
 
-    pose = None
-    pose = client.simGetObjectPose(mesh.name)
-    if assetName == "Quadrotor1":
-        print("QUADDDDDDDDDDD")
+    pose = client.simGetObjectPose(objectName)
+    position = airsimToScenicLocationTuple(pose.position)
+    orientation = airsimToScenicOrientationTuple(pose.orientation)
 
-    print(pose.position.get_length())
-    position = (pose.position.x_val, pose.position.y_val, pose.position.z_val)
-    orientation = airsim.to_eularian_angles(pose.orientation)
-    # scale = (pose.scale.x_val, pose.scale.y_val, pose.scale.z_val)
     worldInfo.append(
         dict(
-            name=mesh.name,
-            assetName=assetName,
+            name=objectName,
             position=position,
             orientation=orientation,
-            # scale=scale,
-        )
+        ),
     )
+    with open(
+        outputDirectory + "objectMeshes/" + objectName + ".obj",
+        "w",
+    ) as outfile:
+        outfile.write(trimesh.exchange.obj.export_obj(tmesh))
 
 
 with open(outputDirectory + "worldInfo.json", "w") as outfile:

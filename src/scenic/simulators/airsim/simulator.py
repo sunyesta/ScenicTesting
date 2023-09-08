@@ -1,34 +1,35 @@
-from cmath import atan, pi, tan
+# standard libs
 import math
+import time
+from cmath import atan, pi, tan
 from math import sin, radians, degrees, copysign
-import os
-import pathlib
-import time
-import random
-import subprocess
-import scipy
-from scenic.core.vectors import Orientation, Vector
-import time
-from scenic.core.type_support import toVector
 
+# third party libs
+import airsim
+import scipy
 import numpy as np
 
+# scenic libs
+from scenic.core.vectors import Orientation, Vector
+from scenic.core.type_support import toVector
 from scenic.core.simulators import (
     Simulator,
     Simulation,
     SimulationCreationError,
     SimulatorInterfaceWarning,
 )
-
-import airsim
+from .conversionUtils import (
+    scenicToAirsimLocation,
+    scenicToAirsimOrientation,
+    airsimToScenicLocation,
+    airsimToScenicOrientation,
+    scenicToAirsimScale,
+)
 
 
 class AirSimSimulator(Simulator):
-    def __init__(self, map_path, timestep=0.1, idleStoragePos=(0, 0, 0)):
-        # print(airsim.Vector3r(100, 100, 100))
-
-        # initializing airsim
-
+    def __init__(self, timestep, idleStoragePos=(0, 0, 0)):
+        # start airsim client
         try:
             client = airsim.MultirotorClient()
             client.confirmConnection()
@@ -37,8 +38,12 @@ class AirSimSimulator(Simulator):
         except Exception:
             raise RuntimeError("Airsim must be running on before executing scenic")
 
+        # init properties
         self.client = client
         self.idleStoragePos = idleStoragePos
+        self.timestep = timestep
+
+        # call super
         super().__init__()
 
     def createSimulation(self, scene, **kwargs):
@@ -52,20 +57,21 @@ class AirSimSimulation(Simulation):
     # ------------------- Required Methods -------------------
 
     def __init__(self, simulator, scene, client, **kwargs):
+        # init properties
         self.simulator = simulator
         self.client = client
-        self.joinables = []
-        self.objs = {}
+        self.joinables = []  # used in waitforjoinables
+        self.objTrove = []  # objs to delete on simulation complete
+        self.objs = {}  # obj name to objrealname dict
+        self.drones = {}  # obj name to objrealname dict only for drones
+        self.startDrones = self.client.listVehicles()
 
         super().__init__(scene, **kwargs)
 
     def setup(self):
-        self.client.simPause(True)
+        # init properties
 
-        self.joinables = []
-        self.objTrove = []
-
-        self.startDrones = self.client.listVehicles()
+        # move all drones to offscreen position
         self.client.simPause(False)
         for i, drone in enumerate(self.startDrones):
             newPose = airsim.Pose(
@@ -84,8 +90,19 @@ class AirSimSimulation(Simulation):
         # create objs
         super().setup()
 
+        # ensure that drones are in the correct places
+        self.client.simPause(False)
+        time.sleep(1)
+        self.client.simPause(True)
+        print(self.getDronePositions())
+
     def createObjectInSimulator(self, obj):
-        # ------ set default values ------
+        # create AirSimPrexisting
+        if obj.blueprint == "AirSimPrexisting":
+            self.objs[obj.name] = obj.name
+            return
+
+        # set obj name if no name specified
         if not obj.name:
             obj.name = str(hash(obj))
 
@@ -97,19 +114,20 @@ class AirSimSimulation(Simulation):
                 + " in the simulator"
             )
 
+        # set realObjName
         realObjName = obj.name + str(hash(obj))
-        obj.realObjName = realObjName
-        # ------------
 
+        # set pose
         pose = airsim.Pose(
             position_val=scenicToAirsimLocation(obj.position),
-            orientation_val=scenicToAirsimRotation(obj.orientation),
+            orientation_val=scenicToAirsimOrientation(obj.orientation),
         )
 
+        # create obj in airsim
         if obj.blueprint == "Drone":
             obj._startPos = obj.position
 
-            # if there is an avalible drone, take it
+            # if there is an avalible drone, take it, else create one
             if self.nextAvalibleDroneIndex < len(self.startDrones):
                 realObjName = self.startDrones[self.nextAvalibleDroneIndex]
                 self.nextAvalibleDroneIndex += 1
@@ -118,26 +136,39 @@ class AirSimSimulation(Simulation):
                 self.client.simAddVehicle(
                     vehicle_name=realObjName, vehicle_type="simpleflight", pose=pose
                 )
+
+            obj.realObjName = realObjName
             self.objs[obj.name] = realObjName
+            self.drones[obj.name] = realObjName
+
+            # start the drone and place it in the world
+
+            # self.client.simPause(False)
             self.client.enableApiControl(True, realObjName)
             self.client.armDisarm(True, realObjName)
-
             self.client.simSetVehiclePose(
                 vehicle_name=realObjName, pose=pose, ignore_collision=True
             )
 
+            # set propellers on or off
             if obj.startHovering:
                 self.client.moveByVelocityAsync(0, 0, 0, 1, vehicle_name=realObjName)
             else:
                 # shut off drone propellers
                 self.client.moveByVelocityAsync(0, 0, 0, -1, vehicle_name=realObjName)
+            # self.client.simPause(True)
 
-        else:
+        elif obj.blueprint == "StaticObj":
+            # ensure user is creating an object that uses an existing asset
             if not (obj.assetName in self.client.simListAssets()):
-                raise RuntimeError("no asset of name found: " + obj.assetName)
+                raise RuntimeError(
+                    "no asset of name found: "
+                    + obj.assetName
+                    + "\n use one of these assets:\n"
+                    + self.client.simListAssets()
+                )
 
-            # print("creating:" + obj.name + " " + realObjName)
-
+            # create obj in airsim
             realObjName = self.client.simSpawnObject(
                 object_name=realObjName,
                 asset_name=obj.assetName,
@@ -147,39 +178,17 @@ class AirSimSimulation(Simulation):
                 is_blueprint=False,
             )
 
+            # add obj to sim lists
+            obj.realObjName = realObjName
             self.objs[obj.name] = realObjName
             self.objTrove.append(realObjName)
-        # print(f"Created object {realObjName} from asset {obj.assetName} ")
-
-    def initializeDronePosition(self, droneName, pose):
-        self.client.simPause(False)
-
-        time.sleep(4)
-
-        # print("new pose = "+str(pose.position))
-
-        # joinable = self.client.moveToPositionAsync(
-        #     pose.position.x_val,
-        #     pose.position.y_val,
-        #     pose.position.z_val,
-        #     10,
-        #     vehicle_name=droneName,
-        # )
-
-        joinable = self.client.takeoffAsync(
-            vehicle_name=droneName,
-        )
-        self.joinables.append(joinable)
-        self.client.simPause(True)
-
-        # save our newly created drone
-        self.vehicles = self.client.listVehicles()
+        else:
+            raise RuntimeError("object blueprint does not exist", obj.blueprint)
 
     def step(self):
-        # step 1 frame
-        self.client.simContinueForTime(self.timestep)
-        pass
+        self.client.simContinueForTime(self.simulator.timestep)
 
+    # UNUSED
     def waitForJoinables(self):
         self.client.simPause(False)
         for joinable in self.joinables:
@@ -188,32 +197,43 @@ class AirSimSimulation(Simulation):
         print("joined " + str(len(self.joinables)))
         self.joinables = []
 
+    def getDronePositions(self):
+        positions = {}
+        for droneName, realDroneName in self.drones.items():
+            positions[droneName] = airsimToScenicLocation(
+                self.client.simGetVehiclePose(realDroneName).position
+            )
+        return positions
+
     # ------------------- Other Simulator methods -------------------
 
     def destroy(self):
-        print("\n\n\ndestroying!!!")
+        print("\ndestroying!!!")
+
+        # reinstantiate client
         client = airsim.MultirotorClient()
         client.confirmConnection()
         client.simPause(True)
 
-        print(self.objTrove)
-        # ? nothing wants to run after a client method is called?
-        # client.simPause(False)
+        # destroy all objs
         for obj_name in self.objTrove:
             print("destroying:" + obj_name)
             client.simDestroyObject(obj_name)
 
-        # for drone in client.listVehicles():
+        for droneName, realDroneName in self.drones.items():
+            self.client.moveByVelocityAsync(0, 0, 0, -1, vehicle_name=realDroneName)
+
+        # reset the client
         client.reset()
         super().destroy()
 
     def getProperties(self, obj, properties):
-        # # get object properties (not sure if neccessary since objects don't move)
+        # get obj
         objName = self.objs[obj.name]
-
         pose = None
-
         velocity, speed, angularSpeed, angularVelocity = None, None, None, None
+
+        # get obj data
         if obj.blueprint == "Drone":
             pose = self.client.simGetVehiclePose(objName)
             kinematics = self.client.simGetGroundTruthKinematics(objName)
@@ -221,14 +241,17 @@ class AirSimSimulation(Simulation):
 
             angularVelocity = airsimToScenicLocation(kinematics.angular_velocity)
 
-        elif obj.blueprint == "StaticObj":
+        elif obj.blueprint == "StaticObj" or obj.blueprint == "AirSimPrexisting":
             pose = self.client.simGetObjectPose(objName)
 
             # static objs don't have velocity
             velocity = Vector(0, 0, 0)
             angularVelocity = Vector(0, 0, 0)
+        else:
+            raise RuntimeError("object blueprint does not exist", obj.blueprint)
 
-        globalOrientation = airsimToScenicRotation(pose.orientation)
+        # convert values
+        globalOrientation = airsimToScenicOrientation(pose.orientation)
         yaw, pitch, roll = obj.parentOrientation.localAnglesFor(globalOrientation)
 
         location = airsimToScenicLocation(pose.position)
@@ -253,58 +276,8 @@ class AirSimSimulation(Simulation):
 
     # ------------------- Utils -------------------
 
-    # def setProperties(self, obj, properties):
-    #     # set drone position and rotation
-    #     self.client.simSetVehiclePose(
-    #         airsim.Pose(airsim.Vector3r(0, 0, 0), airsim.to_quaternion(0, 0, 0)), False
-    #     )  # ignore collision set to false
-
-    #     # pose can also be directly manipulated
-    #     pose = self.client.simGetVehiclePose()
-    #     pose.position = pose.position + airsim.Vector3r(0.03, 0, 0)
-
     def objInScene(self, objName):
         return objName in self.client.simListSceneObjects()
 
 
 # -------------- Static helper functions --------------
-
-
-def tupleToVector3r(tuple):
-    return airsim.Vector3r(tuple[0], tuple[1], tuple[2])
-
-
-def scenicToAirsimRotation(orientation):
-    pitch, yaw, roll = orientation.r.as_euler("XZY", degrees=False)
-    return airsim.to_quaternion(pitch, roll, yaw)
-
-
-def airsimToScenicRotation(orientation):
-    # intrinsic angles
-    pitch, roll, yaw = airsim.to_eularian_angles(orientation)
-    angles = (pitch, yaw, roll)
-
-    r = scipy.spatial.transform.Rotation.from_euler(
-        seq="XZY", angles=angles, degrees=False
-    )
-    return Orientation(r)
-
-
-def scenicToAirsimLocation(position):
-    position = toVector(position)
-    return airsim.Vector3r(position.x, position.y, -position.z)
-
-
-def airsimToScenicLocation(position):
-    return Vector(
-        position.x_val,
-        position.y_val,
-        -position.z_val,
-    )
-
-
-def scenicToAirsimScale(obj):
-    # movment function in meters
-    # drone size in blender is 98.1694 m
-    # coords scaled by 100? https://microsoft.github.io/AirSim/apis/#:~:text=All%20AirSim%20API%20uses%20NED,in%20centimeters%20instead%20of%20meters.
-    return airsim.Vector3r(obj.width, obj.length, obj.height)

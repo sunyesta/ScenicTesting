@@ -1,6 +1,22 @@
 from scenic.core.simulators import Action
-from scenic.simulators.airsim.simulator import scenicToAirsimLocation
+from .conversionUtils import scenicToAirsimLocationVector
 
+
+import airsim
+import threading
+
+def startWait(future):
+    def joinAsync():
+        future.join()
+    
+    if not future._loop:
+        threading.Thread(target=joinAsync).start()
+
+    return future
+
+def getActualDronePos(drone,client):
+    # print("getting",drone.realObjName)
+    return client.simGetVehiclePose(drone.realObjName).position
 
 class MoveToPositionAction(Action):
     def __init__(self, position):
@@ -10,6 +26,16 @@ class MoveToPositionAction(Action):
         self.z = airsimPosition.z_val
 
     def applyTo(self, agent, simulation):
+
+        client = airsim.MultirotorClient()
+        client.confirmConnection()
+        client.moveToPositionAsync(
+            self.x,
+            self.y,
+            self.z,
+            5,
+            vehicle_name=agent.realObjName,
+        )
         simulation.client.moveToPositionAsync(
             self.x,
             self.y,
@@ -17,6 +43,7 @@ class MoveToPositionAction(Action):
             5,
             vehicle_name=agent.realObjName,
         )
+        
 
 
 class MoveByVelocityAction(Action):
@@ -53,13 +80,29 @@ class FollowAction(Action):
         )
 
 
-behavior FlyToPosition(position, tolerance = 1):
 
-    if distance from self to position < tolerance:
-        return
-    take MoveToPositionAction(position)
-    while distance from self to position > tolerance:
+behavior TestBehavior():
+    print("testing behavior")
+    wait
+
+behavior FlyToPosition(position, speed = 5):
+
+    airsimPosition = scenicToAirsimLocationVector(position)
+
+    client = simulation().client
+
+    reached = startWait(client.moveToPositionAsync(
+        airsimPosition.x,airsimPosition.y,airsimPosition.z,
+        speed,
+        vehicle_name=self.realObjName,
+    ))
+
+    while not reached._set_flag:
         wait
+    
+
+    print("reached:",self.position,getActualDronePos(self,client))
+    return
 
 behavior Patrol(positions, loop=True):
     
@@ -88,6 +131,16 @@ behavior FlyToStart():
     
 
 
-behavior Follow(obj,tolerance=1):
-    if distance from self to obj.position > tolerance:
-        take FollowAction(obj)
+behavior Follow(obj,speed = 5, interval = 5):
+    client = simulation().client
+    while True:
+        position = scenicToAirsimLocationVector(obj.position)
+        print(obj.position)
+        # client.moveToPositionAsync(
+        #     position.x,position.y,position.z,
+        #     speed,
+        #     vehicle_name=self.realObjName,
+        # )
+        do FlyToPosition(obj.position)
+        # for i in range(interval):
+        #     wait

@@ -1,6 +1,7 @@
 import airsim
 import random
 import time
+import threading
 
 
 def scenicToAirsimRotation(orientation):
@@ -8,23 +9,70 @@ def scenicToAirsimRotation(orientation):
     return airsim.to_quaternion(pitch, roll, yaw)
 
 
+def startWait(future):
+    def joinAsync():
+        future.join()
+
+    threading.Thread(target=joinAsync).start()
+
+    return future
+
+
 client = airsim.MultirotorClient()
 client.confirmConnection()
-
-upAngle = 3.14159 / 2
+client.simAddVehicle(
+    vehicle_name="drone2",
+    vehicle_type="simpleflight",
+    pose=airsim.Pose(
+        position_val=airsim.Vector3r(0, 0, -5),
+    ),
+)
 
 drone = client.listVehicles()[0]
+drone2 = client.listVehicles()[1]
+
+
 client.enableApiControl(True, drone)
 client.armDisarm(True, drone)
 print(drone)
 
-newPose = airsim.Pose(
-    position_val=airsim.Vector3r(0, 0, -1),
-    orientation_val=airsim.to_quaternion(0, 0, upAngle),
+
+client.simSetVehiclePose(
+    airsim.Pose(
+        position_val=airsim.Vector3r(0, 0, -5),
+    ),
+    True,
+    drone,
+)
+client.simSetVehiclePose(
+    airsim.Pose(
+        position_val=airsim.Vector3r(5, 5, -5),
+    ),
+    True,
+    drone2,
+)
+
+client.moveByVelocityAsync(0, 0, 0, 1, vehicle_name=drone)
+client.moveByVelocityAsync(0, 0, 0, 1, vehicle_name=drone2)
+
+
+client.moveToPositionAsync(
+    0,
+    0,
+    0,
+    5,
+    vehicle_name=drone,
+)
+client.moveToPositionAsync(
+    0,
+    0,
+    0,
+    5,
+    vehicle_name=drone2,
 )
 
 
 client.simPause(False)
-client.simSetVehiclePose(newPose, True, drone)
+
 time.sleep(0.1)
 # client.simPause(True)
