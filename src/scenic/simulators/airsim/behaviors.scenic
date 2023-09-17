@@ -4,6 +4,7 @@ from .conversionUtils import scenicToAirsimLocationVector
 
 import airsim
 import threading
+from promise import Promise
 
 def startWait(future):
     def joinAsync():
@@ -91,13 +92,21 @@ behavior FlyToPosition(position, speed = 5):
 
     client = simulation().client
 
-    reached = startWait(client.moveToPositionAsync(
+    reached = False
+
+    
+    prom = Promise.cast(client.moveToPositionAsync(
         airsimPosition.x,airsimPosition.y,airsimPosition.z,
         speed,
         vehicle_name=self.realObjName,
     ))
 
-    while not reached._set_flag:
+    print(prom)
+    print("starting")
+    print(prom.is_fulfilled)
+    print(prom.is_pending)
+    while not prom.is_fulfilled:
+        # print(prom.is_fulfilled)
         wait
     
 

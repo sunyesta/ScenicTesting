@@ -17,24 +17,24 @@ param worldInfoPath = "/home/mary/Documents/AirSim/ScenicTesting/src/scenic/simu
 
 # ---------- helper functions ----------
 # REAL
-def createMeshShape(assetFolder, assetName, name = ""):
+# def createMeshShape(assetFolder, assetName, name = ""):
 
-    mesh = trimesh.load( globalParameters.worldInfoPath+assetFolder+"/"+assetName+".obj")
+#     mesh = trimesh.load( globalParameters.worldInfoPath+assetFolder+"/"+assetName+".obj")
    
-    if not mesh.is_watertight:
-        print("repairing: ",assetName,name)
-        mesh = repairMesh(mesh, verbose=True)
+#     if not mesh.is_watertight:
+#         print("repairing: ",assetName,name)
+#         mesh = repairMesh(mesh, verbose=True)
         
-        if not mesh.is_volume:
-            print(assetName,"has no volume")
-            mesh = trimesh.load( globalParameters.worldInfoPath+"assets/Cube.obj")
-    return MeshShape(mesh,scale=.01)
+#         if not mesh.is_volume:
+#             print(assetName,"has no volume")
+#             mesh = trimesh.load( globalParameters.worldInfoPath+"assets/Cube.obj")
+#     return MeshShape(mesh,scale=.01)
 
 # QUICK
-# def createMeshShape(assetFolder, assetName, name = ""):
-#     mesh = trimesh.load( globalParameters.worldInfoPath+"assets/Cube.obj")
+def createMeshShape(assetFolder, assetName, name = ""):
+    mesh = trimesh.load( globalParameters.worldInfoPath+"assets/Cube.obj")
             
-#     return MeshShape(mesh,scale=.01)
+    return MeshShape(mesh,scale=.01)
 
 
 # ---------- simulator creation ----------
